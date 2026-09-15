@@ -152,7 +152,7 @@ GEMINI_API_KEY=your_api_key
 Start the backend:
 
 ```bash
-node index.js
+nodemon --ignore generated-sites/ src/server.js
 ```
 
 The backend runs on:
