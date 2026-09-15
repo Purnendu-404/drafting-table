@@ -275,14 +275,22 @@ Building Drafting Table helped me understand how an AI application can go beyond
 
 ---
 
-## Author
+##  Author
 
-**Purnendu Majumder**
+<div align="center">
 
-Computer Science & Engineering
-National Institute of Technology Agartala
+### **Purnendu Majumder**
 
-[GitHub](https://github.com/Purnendu-404)
+[![GitHub](https://img.shields.io/badge/GitHub-Purnendu--404-181717?style=for-the-badge&logo=github)](https://github.com/Purnendu-404)
 
+</div>
+
+---
+
+<div align="center">
+
+⭐ **If you found this project interesting, consider giving it a star!**
+
+</div>
 
 
