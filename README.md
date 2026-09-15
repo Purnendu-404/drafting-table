@@ -2,7 +2,7 @@
 
 # Drafting Table
 
-**Describe it. Draft it. Run it.**
+### Describe it. Draft it. Run it.
 
 An AI-powered website builder that turns natural-language prompts<br>
 into complete static websites.
@@ -29,7 +29,7 @@ The generated website can then be opened directly in the browser through the Exp
 
 ```text
 Prompt → Gemini → Tool Calls → Website Files → Local Preview
-````
+```
 
 ---
 
@@ -110,10 +110,12 @@ After generation, the project is verified before the preview URL is returned.
 ```text
 drafting-table/
 ├── backend/
-│   ├── ai.js
-│   ├── index.js
-│   ├── tools.js
-│   ├── toolDeclarations.js
+│   ├── src/
+│   │   ├── ai.js
+│   │   ├── server.js
+│   │   ├── tools.js
+│   │   └── toolDeclarations.js
+│   │
 │   └── generated-sites/
 │
 ├── frontend/
@@ -149,10 +151,10 @@ Create a `.env` file:
 GEMINI_API_KEY=your_api_key
 ```
 
-Start the backend:
+Start the backend in development mode:
 
 ```bash
-nodemon --ignore generated-sites/ src/server.js
+npm run dev
 ```
 
 The backend runs on:
@@ -160,6 +162,8 @@ The backend runs on:
 ```text
 http://localhost:3000
 ```
+
+The `dev` script uses Nodemon and ignores changes inside `generated-sites/` so that generating website files does not continuously restart the server.
 
 ### Frontend
 
@@ -183,6 +187,7 @@ For example:
 
 ```text
 Create a minimal portfolio website for a software developer.
+
 Use a dark theme with a hero section, projects section,
 skills section and contact form.
 ```
@@ -275,13 +280,15 @@ Building Drafting Table helped me understand how an AI application can go beyond
 
 ---
 
-##  Author
+## Author
 
 <div align="center">
 
-### **Purnendu Majumder**
+### Purnendu Majumder
 
-[![GitHub](https://img.shields.io/badge/GitHub-Purnendu--404-181717?style=for-the-badge&logo=github)](https://github.com/Purnendu-404)
+<a href="https://github.com/Purnendu-404">
+  <img src="https://img.shields.io/badge/GitHub-Purnendu--404-181717?style=for-the-badge&logo=github" alt="GitHub">
+</a>
 
 </div>
 
@@ -289,8 +296,6 @@ Building Drafting Table helped me understand how an AI application can go beyond
 
 <div align="center">
 
-⭐ **If you found this project interesting, consider giving it a star!**
+If you found this project interesting, consider giving it a star.
 
 </div>
-
-
