@@ -1,30 +1,33 @@
-const { GoogleGenAI } = require('@google/genai');
-require('dotenv').config()
+const { GoogleGenAI } = require("@google/genai");
+require("dotenv").config();
 
-const { toolDeclarations } = require('./toolDeclarations')
-const { availableTools } = require('./tools')
+const { toolDeclarations } = require("./toolDeclarations");
+const { availableTools } = require("./tools");
 
 const ai = new GoogleGenAI({
     apiKey: process.env.GEMINI_API_KEY,
 });
 
-const history = []
+const history = [];
 
-const websiteSystemPrompt = `You are an expert frontend website developer.
+const websiteSystemPrompt = `
+You are an expert frontend website developer.
 
 Your job is to create complete static websites using the available tools.
 
-Follow these rules:
+Rules:
 1. Create a separate directory for every website.
 2. Create index.html.
 3. Create style.css.
 4. Create script.js when JavaScript is useful.
 5. Build modern, beautiful and responsive websites.
 6. Use only HTML, CSS and vanilla JavaScript.
-7. Do not just return website code in your response. Actually create the files using tools.
-8. After creating the website, list the project files.
-9. Read important files again if needed and fix obvious problems.
-10. Finish only when the complete website has been created.`;
+7. Do not return website code in your response. Actually create the files using tools.
+8. After creating the files, use listFiles to verify the project.
+9. If index.html and style.css exist, the website is successfully built.
+10. Never say the website was not built if the required files were successfully created.
+11. After successful verification, give a short confirmation.
+`;
 
 async function build(prompt) {
 
@@ -34,8 +37,9 @@ async function build(prompt) {
     });
 
     while (true) {
+
         const response = await ai.models.generateContent({
-            model: 'gemini-3.1-flash-lite',
+            model: "gemini-3.5-flash-lite",
             contents: history,
             config: {
                 tools: [{
@@ -51,12 +55,13 @@ async function build(prompt) {
         });
 
         if (response.functionCalls && response.functionCalls.length > 0) {
+
             const functionCall = response.functionCalls[0];
+
             console.log(`Function to call: ${functionCall.name}`);
-            console.log(`ID: ${functionCall.id}`);
             console.log(`Arguments: ${JSON.stringify(functionCall.args)}`);
 
-            const tool = availableTools[functionCall.name]
+            const tool = availableTools[functionCall.name];
 
             if (!tool) {
                 throw new Error(
@@ -66,26 +71,28 @@ async function build(prompt) {
 
             const result = await tool(functionCall.args);
 
+            console.log("Tool result:", result);
+
             history.push({
-                role: 'user',
+                role: "user",
                 parts: [{
                     functionResponse: {
                         name: functionCall.name,
                         response: {
-                            result
+                            result,
                         },
-                    }
-                }]
-            })
+                    },
+                }],
+            });
 
         } else {
-            console.log("No function call found in the response.");
-            console.log(response.text);
-            return (response.text)
+            console.log(response.text)
+            return {
+                success: true,
+                message: response.text,
+            };
         }
     }
 }
 
-module.exports = { build }
-
-
+module.exports = { build };

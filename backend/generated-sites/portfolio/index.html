@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Morgan — Senior Full Stack Developer & UI/UX Designer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        },
+                        darkBg: '#090d16',
+                        cardBg: '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-darkBg text-gray-100 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-darkBg/80 backdrop-blur-md border-b border-gray-800/60 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform">
+                    AM
+                </div>
+                <span class="text-xl font-bold bg-gradient-to-r from-white via-gray-200 to-indigo-400 bg-clip-text text-transparent">Alex Morgan</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#about" class="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-colors">About</a>
+                <a href="#skills" class="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-colors">Skills</a>
+                <a href="#projects" class="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-colors">Projects</a>
+                <a href="#experience" class="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-colors">Experience</a>
+                <a href="#testimonials" class="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-colors">Testimonials</a>
+                <a href="#contact" class="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-colors">Contact</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#contact" class="relative inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white transition-all bg-indigo-600 rounded-xl hover:bg-indigo-700 shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:-translate-y-0.5 active:translate-y-0">
+                    <span>Let's Talk</span>
+                    <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 right-0 bg-darkBg/95 backdrop-blur-xl border-b border-gray-800 px-6 py-6 space-y-4 shadow-2xl transition-all">
+            <a href="#about" class="block text-base font-medium text-gray-300 hover:text-indigo-400 mobile-link">About</a>
+            <a href="#skills" class="block text-base font-medium text-gray-300 hover:text-indigo-400 mobile-link">Skills</a>
+            <a href="#projects" class="block text-base font-medium text-gray-300 hover:text-indigo-400 mobile-link">Projects</a>
+            <a href="#experience" class="block text-base font-medium text-gray-300 hover:text-indigo-400 mobile-link">Experience</a>
+            <a href="#testimonials" class="block text-base font-medium text-gray-300 hover:text-indigo-400 mobile-link">Testimonials</a>
+            <a href="#contact" class="block text-base font-medium text-gray-300 hover:text-indigo-400 mobile-link">Contact</a>
+            <div class="pt-2">
+                <a href="#contact" class="w-full inline-flex items-center justify-center px-5 py-3 text-sm font-semibold text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 shadow-lg shadow-indigo-600/30">
+                    Let's Talk <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden">
+        <!-- Background Glowing Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[350px] h-[350px] bg-violet-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-950/80 border border-indigo-800/60 text-indigo-300 text-xs font-semibold tracking-wide shadow-inner">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        Available for Freelance & Full-time Roles
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
+                        Building <span class="bg-gradient-to-r from-indigo-400 via-violet-400 to-pink-400 bg-clip-text text-transparent">digital experiences</span> that matter.
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        I'm <span class="text-white font-semibold">Alex Morgan</span>, a Senior Full-Stack Engineer and UI/UX enthusiast crafting high-performance web applications with modern architecture.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold shadow-xl shadow-indigo-600/30 hover:shadow-indigo-600/50 transition-all text-center flex items-center justify-center gap-2 group">
+                            <span>Explore Work</span>
+                            <i class="fa-solid fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gray-900/80 hover:bg-gray-800 text-gray-200 border border-gray-700 font-semibold transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-regular fa-envelope text-indigo-400"></i>
+                            <span>Get in Touch</span>
+                        </a>
+                    </div>
+
+                    <!-- Social proof / tech badges -->
+                    <div class="pt-8 border-t border-gray-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-gray-400 text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-indigo-400"></i>
+                            <span>6+ Years Experience</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-star text-amber-400"></i>
+                            <span>40+ Projects Delivered</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-globe text-emerald-400"></i>
+                            <span>Remote Worldwide</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual / Code Card -->
+                <div class="lg:col-span-5 relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="relative mx-auto max-w-md lg:max-w-none animate-float">
+                        <!-- Decorative glow card back -->
+                        <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-indigo-500 to-violet-600 opacity-30 blur-lg"></div>
+                        
+                        <div class="relative rounded-2xl bg-[#0f172a] border border-gray-800 shadow-2xl overflow-hidden">
+                            <!-- Window Header -->
+                            <div class="px-4 py-3 bg-[#1e293b] border-b border-gray-800 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                                </div>
+                                <div class="text-xs font-mono text-gray-400 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-code text-indigo-400"></i> developer.js
+                                </div>
+                                <div class="w-6"></div>
+                            </div>
+                            
+                            <!-- Code Body -->
+                            <div class="p-6 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto">
+                                <p class="text-gray-500">// Meet the developer</p>
+                                <p><span class="text-purple-400">const</span> <span class="text-blue-400">alex</span> = {</p>
+                                <p class="pl-4"><span class="text-indigo-300">role</span>: <span class="text-emerald-300">"Senior Full Stack Engineer"</span>,</p>
+                                <p class="pl-4"><span class="text-indigo-300">location</span>: <span class="text-emerald-300">"San Francisco, CA"</span>,</p>
+                                <p class="pl-4"><span class="text-indigo-300">stack</span>: [<span class="text-emerald-300">"React"</span>, <span class="text-emerald-300">"Next.js"</span>, <span class="text-emerald-300">"Node.js"</span>, <span class="text-emerald-300">"TypeScript"</span>, <span class="text-emerald-300">"GraphQL"</span>],</p>
+                                <p class="pl-4"><span class="text-indigo-300">passion</span>: <span class="text-emerald-300">"Scalable UI & Cloud Arch"</span>,</p>
+                                <p class="pl-4"><span class="text-blue-400">codeForFood</span>: <span class="text-purple-400">true</span>,</p>
+                                <p class="pl-4"><span class="text-blue-400">hireable</span>: <span class="text-purple-400">function</span>() {</p>
+                                <p class="pl-8"><span class="text-purple-400">return</span> <span class="text-purple-400">this</span>.passion && <span class="text-purple-400">true</span>;</p>
+                                <p class="pl-4">}</p>
+                                <p>};</p>
+                                <br>
+                                <p class="text-gray-500">// Ready to build extraordinary things.</p>
+                                <p><span class="text-blue-400">console</span>.<span class="text-yellow-300">log</span>(alex.<span class="text-blue-300">hireable</span>()); <span class="text-emerald-400">// true</span></p>
+                            </div>
+
+                            <!-- Card Footer Stats -->
+                            <div class="px-6 py-4 bg-gray-900/90 border-t border-gray-800/80 flex items-center justify-between text-xs text-gray-400">
+                                <span>🚀 Git commits: 2,450+</span>
+                                <span class="text-indigo-400 flex items-center gap-1"><i class="fa-solid fa-circle text-[8px] text-emerald-400"></i> Online</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Logos / Tech Marquee -->
+    <div class="py-10 border-y border-gray-800/60 bg-gray-950/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-6">Trusted by innovative startups and industry leaders</p>
+            <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
+                <div class="flex items-center gap-2 text-xl font-bold font-mono tracking-tighter text-gray-300"><i class="fa-solid fa-cube text-indigo-500"></i> Veloce.io</div>
+                <div class="flex items-center gap-2 text-xl font-bold font-mono tracking-tighter text-gray-300"><i class="fa-solid fa-shield-halved text-purple-500"></i> CyberShield</div>
+                <div class="flex items-center gap-2 text-xl font-bold font-mono tracking-tighter text-gray-300"><i class="fa-solid fa-bolt text-amber-500"></i> PulseCloud</div>
+                <div class="flex items-center gap-2 text-xl font-bold font-mono tracking-tighter text-gray-300"><i class="fa-solid fa-chart-pie text-emerald-500"></i> MetricFlow</div>
+                <div class="flex items-center gap-2 text-xl font-bold font-mono tracking-tighter text-gray-300"><i class="fa-solid fa-compass text-rose-500"></i> NexusAI</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- About Image / Graphic -->
+                <div class="lg:col-span-5" data-aos="fade-right">
+                    <div class="relative">
+                        <div class="absolute -inset-2 bg-gradient-to-tr from-indigo-500 to-violet-600 rounded-3xl opacity-20 blur-xl"></div>
+                        <div class="relative rounded-2xl overflow-hidden border border-gray-800 bg-[#111827] p-4 shadow-2xl">
+                            <!-- Placeholder portrait styled card -->
+                            <div class="aspect-square rounded-xl bg-gradient-to-br from-indigo-950 via-[#111827] to-gray-900 flex flex-col items-center justify-center p-8 text-center relative overflow-hidden group">
+                                <div class="absolute inset-0 bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:16px_16px] opacity-20"></div>
+                                <div class="w-28 h-28 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-500 p-1 mb-6 shadow-xl shadow-indigo-600/30 group-hover:scale-105 transition-transform duration-300">
+                                    <div class="w-full h-full bg-gray-900 rounded-xl flex items-center justify-center text-4xl font-extrabold text-white">
+                                        AM
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-1">Alex Morgan</h3>
+                                <p class="text-indigo-400 text-sm font-medium">San Francisco, CA</p>
+                                <div class="mt-6 flex items-center gap-3">
+                                    <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-xl bg-gray-800 hover:bg-indigo-600 text-gray-300 hover:text-white flex items-center justify-center transition-colors shadow-md">
+                                        <i class="fa-brands fa-github text-lg"></i>
+                                    </a>
+                                    <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-xl bg-gray-800 hover:bg-indigo-600 text-gray-300 hover:text-white flex items-center justify-center transition-colors shadow-md">
+                                        <i class="fa-brands fa-linkedin-in text-lg"></i>
+                                    </a>
+                                    <a href="https://twitter.com" target="_blank" class="w-10 h-10 rounded-xl bg-gray-800 hover:bg-indigo-600 text-gray-300 hover:text-white flex items-center justify-center transition-colors shadow-md">
+                                        <i class="fa-brands fa-x-twitter text-lg"></i>
+                                    </a>
+                                    <a href="mailto:alex@example.com" class="w-10 h-10 rounded-xl bg-gray-800 hover:bg-indigo-600 text-gray-300 hover:text-white flex items-center justify-center transition-colors shadow-md">
+                                        <i class="fa-solid fa-envelope text-lg"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Content -->
+                <div class="lg:col-span-7 space-y-6" data-aos="fade-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-950/60 border border-indigo-800/50 text-indigo-400 text-xs font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-user"></i> About Me
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                        Passionate about clean code, intuitive design, and scalable architecture.
+                    </h2>
+
+                    <p class="text-gray-300 text-base leading-relaxed">
+                        Hello! I'm Alex, a software engineer with over 6 years of professional experience building web applications. My journey started with tinkering in HTML/CSS during high school, and has evolved into designing and scaling distributed systems and polished user interfaces for startups and enterprises alike.
+                    </p>
+
+                    <p class="text-gray-400 text-base leading-relaxed">
+                        I bridge the gap between rigorous engineering and breathtaking design. When I'm not writing code, you'll find me contributing to open-source libraries, mentoring junior developers, or exploring new hiking trails around California.
+                    </p>
+
+                    <!-- Quick Facts Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-gray-900/60 border border-gray-800">
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-indigo-400 mb-1">6+</span>
+                            <span class="text-xs text-gray-400">Years Experience</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-gray-900/60 border border-gray-800">
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-indigo-400 mb-1">40+</span>
+                            <span class="text-xs text-gray-400">Completed Projects</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-gray-900/60 border border-gray-800 col-span-2 sm:col-span-1">
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-indigo-400 mb-1">99.8%</span>
+                            <span class="text-xs text-gray-400">Client Satisfaction</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex items-center gap-4">
+                        <a href="#contact" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold shadow-lg shadow-indigo-600/30 transition-all text-sm">
+                            Let's Collaborate
+                        </a>
+                        <a href="#resume" id="download-cv" class="px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 font-semibold transition-all text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-download text-indigo-400"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-gray-950/50 relative border-t border-gray-800/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-950/60 border border-indigo-800/50 text-indigo-400 text-xs font-semibold tracking-wide uppercase mb-4">
+                    <i class="fa-solid fa-brain"></i> Expertise & Toolkit
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+                    Technologies I Work With
+                </h2>
+                <p class="text-gray-400 text-base">
+                    A comprehensive overview of my technical stack and tools I use to bring ideas to life.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Category 1: Frontend -->
+                <div class="p-8 rounded-2xl bg-[#111827] border border-gray-800 hover:border-indigo-500/50 transition-all shadow-xl group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Frontend Development</h3>
+                    <p class="text-gray-400 text-sm mb-6">Creating responsive, accessible, and ultra-smooth user interfaces with modern frameworks.</p>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-300 font-medium">React / Next.js</span>
+                            <span class="text-indigo-400 font-mono text-xs">95%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-indigo-500 h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+
+                        <div class="flex items-center justify-between text-sm pt-2">
+                            <span class="text-gray-300 font-medium">TypeScript / JavaScript</span>
+                            <span class="text-indigo-400 font-mono text-xs">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-indigo-500 h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+
+                        <div class="flex items-center justify-between text-sm pt-2">
+                            <span class="text-gray-300 font-medium">Tailwind CSS / UI libs</span>
+                            <span class="text-indigo-400 font-mono text-xs">98%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-indigo-500 h-2 rounded-full" style="width: 98%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Backend -->
+                <div class="p-8 rounded-2xl bg-[#111827] border border-gray-800 hover:border-indigo-500/50 transition-all shadow-xl group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-xl bg-purple-600/20 text-purple-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Backend & APIs</h3>
+                    <p class="text-gray-400 text-sm mb-6">Building robust server-side applications, microservices, and secure API endpoints.</p>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-300 font-medium">Node.js / Express</span>
+                            <span class="text-purple-400 font-mono text-xs">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+
+                        <div class="flex items-center justify-between text-sm pt-2">
+                            <span class="text-gray-300 font-medium">Python / FastAPI</span>
+                            <span class="text-purple-400 font-mono text-xs">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+
+                        <div class="flex items-center justify-between text-sm pt-2">
+                            <span class="text-gray-300 font-medium">GraphQL & REST</span>
+                            <span class="text-purple-400 font-mono text-xs">92%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Database & DevOps -->
+                <div class="p-8 rounded-2xl bg-[#111827] border border-gray-800 hover:border-indigo-500/50 transition-all shadow-xl group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Database & DevOps</h3>
+                    <p class="text-gray-400 text-sm mb-6">Managing relational/NoSQL data models and deploying containerized apps to the cloud.</p>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-300 font-medium">PostgreSQL / MongoDB</span>
+                            <span class="text-emerald-400 font-mono text-xs">88%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-emerald-500 h-2 rounded-full" style="width: 88%"></div>
+                        </div>
+
+                        <div class="flex items-center justify-between text-sm pt-2">
+                            <span class="text-gray-300 font-medium">Docker & Kubernetes</span>
+                            <span class="text-emerald-400 font-mono text-xs">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-emerald-500 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+
+                        <div class="flex items-center justify-between text-sm pt-2">
+                            <span class="text-gray-300 font-medium">AWS / Vercel / CI/CD</span>
+                            <span class="text-emerald-400 font-mono text-xs">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-emerald-500 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Skills Badges Grid -->
+            <div class="mt-16 pt-12 border-t border-gray-800/80">
+                <p class="text-center text-sm font-semibold uppercase tracking-wider text-gray-400 mb-8">Additional Tools & Libraries</p>
+                <div class="flex flex-wrap items-center justify-center gap-3">
+                    <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 text-sm font-medium hover:border-indigo-500 transition-colors">Git & GitHub</span>
+                    <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 text-sm font-medium hover:border-indigo-500 transition-colors">Redux Toolkit</span>
+                    <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 text-sm font-medium hover:border-indigo-500 transition-colors">Zustand</span>
+                    <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 text-sm font-medium hover:border-indigo-500 transition-colors">Prisma ORM</span>
+                    <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 text-sm font-medium hover:border-indigo-500 transition-colors">Redis</span>
+                    <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 text-sm font-medium hover:border-indigo-500 transition-colors">Jest & Cypress</span>
+                    <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 text-sm font-medium hover:border-indigo-500 transition-colors">Figma</span>
+                    <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 text-sm font-medium hover:border-indigo-500 transition-colors">Webpack / Vite</span>
+                    <span class="px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 text-sm font-medium hover:border-indigo-500 transition-colors">Linux / Bash</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6" data-aos="fade-up">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-950/60 border border-indigo-800/50 text-indigo-400 text-xs font-semibold tracking-wide uppercase mb-4">
+                        <i class="fa-solid fa-code-branch"></i> Featured Work
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                        Recent Projects & Case Studies
+                    </h2>
+                </div>
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap gap-2" id="project-filters">
+                    <button class="px-4 py-2 rounded-xl bg-indigo-600 text-white text-sm font-semibold transition-all filter-btn active" data-filter="all">All</button>
+                    <button class="px-4 py-2 rounded-xl bg-gray-900 text-gray-300 hover:text-white text-sm font-semibold transition-all filter-btn" data-filter="fullstack">Full Stack</button>
+                    <button class="px-4 py-2 rounded-xl bg-gray-900 text-gray-300 hover:text-white text-sm font-semibold transition-all filter-btn" data-filter="saas">SaaS / Cloud</button>
+                    <button class="px-4 py-2 rounded-xl bg-gray-900 text-gray-300 hover:text-white text-sm font-semibold transition-all filter-btn" data-filter="frontend">Frontend UI</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Project 1: SaaS Analytics Dashboard -->
+                <div class="project-card rounded-2xl bg-[#111827] border border-gray-800 overflow-hidden hover:border-indigo-500/50 transition-all shadow-xl group flex flex-col" data-category="saas fullstack" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-56 overflow-hidden bg-gray-900">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-indigo-900/60 to-purple-900/40 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center p-6">
+                            <!-- Mock UI preview -->
+                            <div class="w-full h-full rounded-xl bg-gray-900/90 border border-gray-700/80 p-4 shadow-2xl flex flex-col justify-between">
+                                <div class="flex items-center justify-between text-[10px] text-gray-400">
+                                    <span class="flex items-center gap-1 font-semibold text-indigo-400"><i class="fa-solid fa-chart-line"></i> MetricFlow Dashboard</span>
+                                    <span>Live 🟢</span>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="w-3/4 h-2 bg-indigo-500/40 rounded"></div>
+                                    <div class="w-1/2 h-2 bg-gray-700 rounded"></div>
+                                </div>
+                                <div class="flex items-end justify-between pt-2">
+                                    <div class="w-8 h-12 bg-indigo-600/60 rounded-t"></div>
+                                    <div class="w-8 h-16 bg-purple-600/60 rounded-t"></div>
+                                    <div class="w-8 h-20 bg-indigo-500 rounded-t"></div>
+                                    <div class="w-8 h-14 bg-emerald-500/80 rounded-t"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-darkBg/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium text-indigo-400 border border-gray-700">
+                            SaaS Platform
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">MetricFlow Analytics</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                Real-time user behavior analytics platform built with Next.js 14, Tailwind CSS, PostgreSQL, and WebSockets for live data streaming.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-indigo-300 text-xs font-mono">Next.js</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-indigo-300 text-xs font-mono">TypeScript</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-indigo-300 text-xs font-mono">PostgreSQL</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-indigo-300 text-xs font-mono">Tailwind</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-800/80">
+                            <a href="#projects" class="text-sm font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i> Live Demo
+                            </a>
+                            <a href="#projects" class="text-sm font-medium text-gray-400 hover:text-white flex items-center gap-1.5">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: AI Code Assistant -->
+                <div class="project-card rounded-2xl bg-[#111827] border border-gray-800 overflow-hidden hover:border-indigo-500/50 transition-all shadow-xl group flex flex-col" data-category="fullstack frontend" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-56 overflow-hidden bg-gray-900">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-purple-900/60 to-pink-900/40 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center p-6">
+                            <div class="w-full h-full rounded-xl bg-gray-900/90 border border-gray-700/80 p-4 shadow-2xl flex flex-col justify-between">
+                                <div class="flex items-center justify-between text-[10px] text-gray-400">
+                                    <span class="flex items-center gap-1 font-semibold text-purple-400"><i class="fa-solid fa-wand-magic-sparkles"></i> CodePilot AI</span>
+                                    <span>v2.4</span>
+                                </div>
+                                <div class="font-mono text-[11px] text-purple-300 bg-gray-950 p-2 rounded">
+                                    &gt; Refactoring function... <span class="text-emerald-400">Done!</span>
+                                </div>
+                                <div class="w-full h-2 bg-purple-500/30 rounded"></div>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-darkBg/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium text-purple-400 border border-gray-700">
+                            AI Tool
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">CodePilot AI Assistant</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                An intelligent web-based coding assistant powered by OpenAI API, featuring syntax highlighting, automated unit tests, and code refactoring.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-purple-300 text-xs font-mono">React</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-purple-300 text-xs font-mono">Node.js</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-purple-300 text-xs font-mono">OpenAI API</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-purple-300 text-xs font-mono">Redis</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-800/80">
+                            <a href="#projects" class="text-sm font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i> Live Demo
+                            </a>
+                            <a href="#projects" class="text-sm font-medium text-gray-400 hover:text-white flex items-center gap-1.5">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: E-Commerce Storefront -->
+                <div class="project-card rounded-2xl bg-[#111827] border border-gray-800 overflow-hidden hover:border-indigo-500/50 transition-all shadow-xl group flex flex-col" data-category="frontend fullstack" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-56 overflow-hidden bg-gray-900">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-emerald-900/60 to-teal-900/40 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center p-6">
+                            <div class="w-full h-full rounded-xl bg-gray-900/90 border border-gray-700/80 p-4 shadow-2xl flex flex-col justify-between">
+                                <div class="flex items-center justify-between text-[10px] text-gray-400">
+                                    <span class="flex items-center gap-1 font-semibold text-emerald-400"><i class="fa-solid fa-bag-shopping"></i> Nexus Store</span>
+                                    <span>$1,240.00</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div class="h-10 bg-gray-800 rounded"></div>
+                                    <div class="h-10 bg-gray-800 rounded"></div>
+                                </div>
+                                <div class="w-full h-3 bg-emerald-500 rounded text-center text-[10px] text-gray-950 font-bold flex items-center justify-center">Checkout Now</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-darkBg/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium text-emerald-400 border border-gray-700">
+                            E-Commerce
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Nexus E-Commerce</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                High-performance headless e-commerce store with Shopify integration, Stripe checkout, lightning-fast product filtering, and cart state management.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-emerald-300 text-xs font-mono">Next.js</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-emerald-300 text-xs font-mono">Stripe</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-emerald-300 text-xs font-mono">Shopify API</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-emerald-300 text-xs font-mono">Zustand</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-800/80">
+                            <a href="#projects" class="text-sm font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i> Live Demo
+                            </a>
+                            <a href="#projects" class="text-sm font-medium text-gray-400 hover:text-white flex items-center gap-1.5">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Cloud Infrastructure Monitor -->
+                <div class="project-card rounded-2xl bg-[#111827] border border-gray-800 overflow-hidden hover:border-indigo-500/50 transition-all shadow-xl group flex flex-col" data-category="saas fullstack" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-56 overflow-hidden bg-gray-900">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-amber-900/60 to-orange-900/40 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center p-6">
+                            <div class="w-full h-full rounded-xl bg-gray-900/90 border border-gray-700/80 p-4 shadow-2xl flex flex-col justify-between">
+                                <div class="flex items-center justify-between text-[10px] text-gray-400">
+                                    <span class="flex items-center gap-1 font-semibold text-amber-400"><i class="fa-solid fa-server"></i> CloudPulse</span>
+                                    <span>Uptime 99.9%</span>
+                                </div>
+                                <div class="space-y-1">
+                                    <div class="flex justify-between text-[10px] text-gray-300"><span>CPU Load</span><span>42%</span></div>
+                                    <div class="w-full h-2 bg-gray-800 rounded"><div class="w-2/5 h-2 bg-amber-500 rounded"></div></div>
+                                </div>
+                                <div class="flex gap-1">
+                                    <div class="flex-1 h-2 bg-emerald-500 rounded"></div>
+                                    <div class="flex-1 h-2 bg-emerald-500 rounded"></div>
+                                    <div class="flex-1 h-2 bg-emerald-500 rounded"></div>
+                                    <div class="flex-1 h-2 bg-amber-500 rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-darkBg/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium text-amber-400 border border-gray-700">
+                            DevOps / SaaS
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">CloudPulse Monitor</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                Server and container health monitoring tool with automated alerting, Grafana integration, and custom metrics visualization.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-amber-300 text-xs font-mono">React</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-amber-300 text-xs font-mono">FastAPI</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-amber-300 text-xs font-mono">Docker</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-amber-300 text-xs font-mono">Grafana</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-800/80">
+                            <a href="#projects" class="text-sm font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i> Live Demo
+                            </a>
+                            <a href="#projects" class="text-sm font-medium text-gray-400 hover:text-white flex items-center gap-1.5">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Crypto Portfolio Tracker -->
+                <div class="project-card rounded-2xl bg-[#111827] border border-gray-800 overflow-hidden hover:border-indigo-500/50 transition-all shadow-xl group flex flex-col" data-category="frontend" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-56 overflow-hidden bg-gray-900">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-900/65 to-indigo-900/40 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center p-6">
+                            <div class="w-full h-full rounded-xl bg-gray-900/90 border border-gray-700/80 p-4 shadow-2xl flex flex-col justify-between">
+                                <div class="flex items-center justify-between text-[10px] text-gray-400">
+                                    <span class="flex items-center gap-1 font-semibold text-blue-400"><i class="fa-solid fa-coins"></i> CryptoVault</span>
+                                    <span class="text-emerald-400">+14.2%</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-white font-bold">BTC / ETH / SOL</span>
+                                    <div class="w-12 h-6 bg-blue-500/20 rounded flex items-center justify-center text-[10px] text-blue-300">Live</div>
+                                </div>
+                                <div class="w-full h-2 bg-blue-500/40 rounded"></div>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-darkBg/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium text-blue-400 border border-gray-700">
+                            Web3 / Fintech
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">CryptoVault Tracker</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                Cryptocurrency portfolio tracking web application integrating CoinGecko API for real-time asset pricing, interactive charts, and profit/loss metrics.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-blue-300 text-xs font-mono">React</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-blue-300 text-xs font-mono">Chart.js</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-blue-300 text-xs font-mono">Tailwind</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-blue-300 text-xs font-mono">REST API</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-800/80">
+                            <a href="#projects" class="text-sm font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i> Live Demo
+                            </a>
+                            <a href="#projects" class="text-sm font-medium text-gray-400 hover:text-white flex items-center gap-1.5">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Task Management App -->
+                <div class="project-card rounded-2xl bg-[#111827] border border-gray-800 overflow-hidden hover:border-indigo-500/50 transition-all shadow-xl group flex flex-col" data-category="frontend" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-56 overflow-hidden bg-gray-900">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-violet-900/60 to-rose-900/40 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center p-6">
+                            <div class="w-full h-full rounded-xl bg-gray-900/90 border border-gray-700/80 p-4 shadow-2xl flex flex-col justify-between">
+                                <div class="flex items-center justify-between text-[10px] text-gray-400">
+                                    <span class="flex items-center gap-1 font-semibold text-rose-400"><i class="fa-solid fa-list-check"></i> TaskFlow Kanban</span>
+                                    <span>Sprint 4</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-1.5">
+                                    <div class="h-12 bg-gray-800/80 rounded p-1"><div class="w-3/4 h-1.5 bg-rose-500 rounded"></div></div>
+                                    <div class="h-12 bg-gray-800/80 rounded p-1"><div class="w-3/4 h-1.5 bg-amber-500 rounded"></div></div>
+                                    <div class="h-12 bg-gray-800/80 rounded p-1"><div class="w-3/4 h-1.5 bg-emerald-500 rounded"></div></div>
+                                </div>
+                                <div class="w-full h-2 bg-rose-500/30 rounded"></div>
+                            </div>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-darkBg/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium text-rose-400 border border-gray-700">
+                            Productivity
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">TaskFlow Kanban Board</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                Collaborative project management application featuring drag-and-drop Kanban boards, real-time team comments, and task assignment.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-rose-300 text-xs font-mono">React</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-rose-300 text-xs font-mono">Firebase</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-rose-300 text-xs font-mono">Tailwind</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-rose-300 text-xs font-mono">DnD Kit</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-800/80">
+                            <a href="#projects" class="text-sm font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i> Live Demo
+                            </a>
+                            <a href="#projects" class="text-sm font-medium text-gray-400 hover:text-white flex items-center gap-1.5">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience" class="py-24 bg-gray-950/50 relative border-t border-gray-800/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-950/60 border border-indigo-800/50 text-indigo-400 text-xs font-semibold tracking-wide uppercase mb-4">
+                    <i class="fa-solid fa-briefcase"></i> Career Journey
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+                    Experience & Education
+                </h2>
+                <p class="text-gray-400 text-base">
+                    A timeline of my professional career and academic background.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="relative border-l border-indigo-500/30 ml-4 sm:ml-8 space-y-12">
+                    
+                    <!-- Exp 1 -->
+                    <div class="relative pl-8 sm:pl-10" data-aos="fade-up">
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-indigo-600 border-4 border-darkBg flex items-center justify-center text-white text-xs shadow-lg shadow-indigo-600/50">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div class="p-6 sm:p-8 rounded-2xl bg-[#111827] border border-gray-800 hover:border-indigo-500/50 transition-all shadow-xl">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Senior Full Stack Engineer</h3>
+                                    <p class="text-indigo-400 font-medium text-sm">Veloce Technologies • San Francisco, CA</p>
+                                </div>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full bg-indigo-950/80 border border-indigo-800/60 text-indigo-300 text-xs font-mono">
+                                    2021 — Present
+                                </span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                                Lead engineering team of 6 developers building scalable SaaS analytics applications. Architected microservices backend in Node.js and Next.js frontend, improving page load speeds by 45%.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-300 text-xs font-mono">Next.js</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-300 text-xs font-mono">TypeScript</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-300 text-xs font-mono">AWS</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-300 text-xs font-mono">GraphQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Exp 2 -->
+                    <div class="relative pl-8 sm:pl-10" data-aos="fade-up">
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-purple-600 border-4 border-darkBg flex items-center justify-center text-white text-xs shadow-lg shadow-purple-600/50">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div class="p-6 sm:p-8 rounded-2xl bg-[#111827] border border-gray-800 hover:border-indigo-500/50 transition-all shadow-xl">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Full Stack Software Developer</h3>
+                                    <p class="text-purple-400 font-medium text-sm">PulseCloud Solutions • Austin, TX (Remote)</p>
+                                </div>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full bg-purple-950/80 border border-purple-800/60 text-purple-300 text-xs font-mono">
+                                    2019 — 2021
+                                </span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                                Developed high-traffic web applications and RESTful APIs using React, Node.js, and PostgreSQL. Implemented automated CI/CD pipelines reducing deployment friction.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-300 text-xs font-mono">React</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-300 text-xs font-mono">Express</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-300 text-xs font-mono">PostgreSQL</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-300 text-xs font-mono">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Exp 3 -->
+                    <div class="relative pl-8 sm:pl-10" data-aos="fade-up">
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-emerald-600 border-4 border-darkBg flex items-center justify-center text-white text-xs shadow-lg shadow-emerald-600/50">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="p-6 sm:p-8 rounded-2xl bg-[#111827] border border-gray-800 hover:border-indigo-500/50 transition-all shadow-xl">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">B.S. in Computer Science</h3>
+                                    <p class="text-emerald-400 font-medium text-sm">University of California, Berkeley</p>
+                                </div>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/60 text-emerald-300 text-xs font-mono">
+                                    2015 — 2019
+                                </span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                                Graduated with Honors. Focused on Data Structures, Algorithms, Distributed Systems, and Human-Computer Interaction (HCI). President of Web Development Club.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-300 text-xs font-mono">Data Structures</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-300 text-xs font-mono">Algorithms</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-300 text-xs font-mono">UI/UX Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-950/60 border border-indigo-800/50 text-indigo-400 text-xs font-semibold tracking-wide uppercase mb-4">
+                    <i class="fa-solid fa-comments"></i> Recommendations
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+                    What People Say
+                </h2>
+                <p class="text-gray-400 text-base">
+                    Feedback from engineering managers, founders, and colleagues I've collaborated with.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1 -->
+                <div class="p-8 rounded-2xl bg-[#111827] border border-gray-800 hover:border-indigo-500/50 transition-all shadow-xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-6">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                            "Alex is one of those rare engineers who combines top-tier technical prowess with exceptional product design sense. He revamped our entire analytics dashboard ahead of schedule and blew our clients away."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gray-800/80">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white">
+                            JS
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Jonathan Sterling</h4>
+                            <p class="text-gray-400 text-xs">CTO at Veloce Technologies</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="p-8 rounded-2xl bg-[#111827] border border-gray-800 hover:border-indigo-500/50 transition-all shadow-xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-6">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                            "Working with Alex was an absolute pleasure. His attention to detail in frontend architecture and state management made our e-commerce platform rock-solid during peak Black Friday traffic."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gray-800/80">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center font-bold text-white">
+                            EC
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Elena Chen</h4>
+                            <p class="text-gray-400 text-xs">Product Lead at Nexus Store</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="p-8 rounded-2xl bg-[#111827] border border-gray-800 hover:border-indigo-500/50 transition-all shadow-xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-6">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                            "Alex has an incredible knack for explaining complex technical constraints to non-technical stakeholders. His code is clean, well-tested, and a joy to review."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gray-800/80">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center font-bold text-white">
+                            MR
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Marcus Reynolds</h4>
+                            <p class="text-gray-400 text-xs">VP of Engineering at PulseCloud</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-950/60 relative border-t border-gray-800/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Contact Info -->
+                <div class="lg:col-span-5 space-y-6" data-aos="fade-right">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-950/60 border border-indigo-800/50 text-indigo-400 text-xs font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-paper-plane"></i> Get in Touch
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                        Let's build something amazing together.
+                    </h2>
+
+                    <p class="text-gray-400 text-base leading-relaxed">
+                        Have a project in mind, a question about my work, or want to discuss a potential full-time role? Send me a message and I'll get back to you within 24 hours.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-[#111827] border border-gray-800">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Email Me</span>
+                                <a href="mailto:alex.morgan.dev@example.com" class="text-white font-semibold hover:text-indigo-400 transition-colors text-sm sm:text-base">alex.morgan.dev@example.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-[#111827] border border-gray-800">
+                            <div class="w-12 h-12 rounded-xl bg-purple-600/20 text-purple-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Location</span>
+                                <span class="text-white font-semibold text-sm sm:text-base">San Francisco, CA (Available Remote)</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-[#111827] border border-gray-800">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-calendar-check"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Availability</span>
+                                <span class="text-white font-semibold text-sm sm:text-base">Open for Freelance & Full-Time</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7" data-aos="fade-left">
+                    <div class="p-8 sm:p-10 rounded-2xl bg-[#111827] border border-gray-800 shadow-2xl relative">
+                        
+                        <!-- Success Notification Alert (Hidden by default) -->
+                        <div id="form-success" class="hidden mb-6 p-4 rounded-xl bg-emerald-950/80 border border-emerald-800 text-emerald-300 text-sm flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+                            <span>Thank you! Your message has been sent successfully. I'll get back to you soon.</span>
+                        </div>
+
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Your Name *</label>
+                                    <input type="text" id="name" required class="w-full px-4 py-3.5 rounded-xl bg-gray-900 border border-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Your Email *</label>
+                                    <input type="email" id="email" required class="w-full px-4 py-3.5 rounded-xl bg-gray-900 border border-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm" placeholder="john@example.com">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="subject" class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Subject *</label>
+                                <input type="text" id="subject" required class="w-full px-4 py-3.5 rounded-xl bg-gray-900 border border-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm" placeholder="Project Inquiry / Job Opportunity">
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Your Message *</label>
+                                <textarea id="message" rows="5" required class="w-full px-4 py-3.5 rounded-xl bg-gray-900 border border-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm resize-none" placeholder="Tell me about your project, timeline, and goals..."></textarea>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold shadow-xl shadow-indigo-600/30 hover:shadow-indigo-600/50 transition-all text-center flex items-center justify-center gap-2">
+                                <span id="btn-text">Send Message</span>
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#070a12] border-t border-gray-800/80 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-white text-xs shadow-md">
+                    AM
+                </div>
+                <span class="text-base font-bold text-white">Alex Morgan</span>
+                <span class="text-xs text-gray-500 ml-2">© <span id="current-year"></span> All rights reserved.</span>
+            </div>
+
+            <div class="flex items-center gap-5 text-gray-400">
+                <a href="https://github.com" target="_blank" class="w-9 h-9 rounded-lg bg-gray-900 hover:bg-indigo-600 hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="w-9 h-9 rounded-lg bg-gray-900 hover:bg-indigo-600 hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="w-9 h-9 rounded-lg bg-gray-900 hover:bg-indigo-600 hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="mailto:alex@example.com" class="w-9 h-9 rounded-lg bg-gray-900 hover:bg-indigo-600 hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+
+            <div class="text-xs text-gray-500">
+                Built with <i class="fa-solid fa-heart text-rose-500 mx-1"></i> using Tailwind CSS & Vanilla JS
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

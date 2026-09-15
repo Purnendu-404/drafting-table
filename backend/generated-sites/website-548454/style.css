@@ -1,0 +1,28 @@
+/* Custom scrollbar and animations */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ebff00;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee {
+    display: inline-flex;
+    animation: marquee 25s linear infinite;
+}
+
+.marquee:hover {
+    animation-play-state: paused;
+}

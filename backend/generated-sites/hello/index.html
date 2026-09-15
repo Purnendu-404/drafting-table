@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADIDAS | Official Store - Dark Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <p>⚡ FREE SHIPPING ON ALL ORDERS OVER $75 | USE CODE: <strong>ADIDAS2025</strong></p>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <!-- SVG Adidas Trefoil/Logo -->
+                <svg class="adidas-logo" viewBox="0 0 114 78" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M110.5 59.9C108.9 56.6 98.7 38.3 84.1 12.8L74.8 28.9C87.4 51.4 96.1 66.8 96.6 67.8C97.4 69.4 99.2 70.3 101.4 70.3H112.5C113.9 70.3 114.6 69.1 114 67.8C113.1 65.8 112 62.8 110.5 59.9Z"/>
+                    <path d="M66.4 0L24 72.8C23.2 74.2 24 75.6 25.6 75.6H38.2C39.6 75.6 40.8 74.8 41.5 73.6L77.7 11.2L66.4 0Z"/>
+                    <path d="M12.9 39.4L1.4 59.5C0.3 61.4 -0.3 63.3 0.1 65.2C0.6 68.2 3.1 70.3 6.1 70.3H17.2C19.4 70.3 21.2 69.1 22 67.3C23.1 64.9 25.5 60.5 29.5 53.6L12.9 39.4Z"/>
+                </svg>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#products">New & Trending</a></li>
+                    <li><a href="#featured">Men</a></li>
+                    <li><a href="#featured">Women</a></li>
+                    <li><a href="#sports">Sports</a></li>
+                    <li><a href="#sale">Sale</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Search products..." id="search-input">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <button class="icon-btn" aria-label="Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge">0</span>
+                </button>
+                <button class="icon-btn cart-btn" id="cart-btn" aria-label="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="badge" id="cart-count">2</span>
+                </button>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <span class="pulse-dot"></span> NEW RELEASE 2025
+                </div>
+                <h1 class="hero-title">IMPOSSIBLE <br><span class="highlight">IS NOTHING</span></h1>
+                <p class="hero-description">Push your limits with the all-new Adidas Ultraboost Light and Adizero collection. Engineered for relentless energy return and elite performance.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">
+                        <span>SHOP COLLECTION</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#featured" class="btn btn-outline">EXPLORE TECH</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>30%</h3>
+                        <p>Lighter Foam</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Recycled Yarn</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="stat-item">
+                        <h3>4.9★</h3>
+                        <p>User Rating</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="shoe-glow"></div>
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80" alt="Adidas Ultraboost Red Edition" class="hero-shoe" id="hero-shoe">
+                <div class="floating-badge badge-1">
+                    <i class="fa-solid fa-bolt"></i>
+                    <div>
+                        <strong>Light Boost</strong>
+                        <span>Next-Gen Energy</span>
+                    </div>
+                </div>
+                <div class="floating-badge badge-2">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div>
+                        <strong>Continental™ Rubber</strong>
+                        <span>All-Weather Grip</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Ticker -->
+    <div class="brand-ticker">
+        <div class="ticker-track">
+            <span>ADIDAS ORIGINALS</span>
+            <span class="dot">•</span>
+            <span>ULTRABOOST LIGHT</span>
+            <span class="dot">•</span>
+            <span>NMD_R1</span>
+            <span class="dot">•</span>
+            <span>STAN SMITH</span>
+            <span class="dot">•</span>
+            <span>FORUM 84</span>
+            <span class="dot">•</span>
+            <span>PREDATOR ELITE</span>
+            <span class="dot">•</span>
+            <span>ADIZERO ADIOS PRO 3</span>
+            <span class="dot">•</span>
+        </div>
+    </div>
+
+    <!-- Category Pills -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="section-header center">
+                <h2>BROWSE BY CATEGORY</h2>
+                <p>Find gear tailored for your lifestyle and performance goals</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card" style="background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&w=600&q=80');">
+                    <div class="category-info">
+                        <h3>RUNNING</h3>
+                        <span>Explore 42 Items</span>
+                        <a href="#products" class="cat-link"><i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="category-card" style="background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=600&q=80');">
+                    <div class="category-info">
+                        <h3>LIFESTYLE</h3>
+                        <span>Explore 68 Items</span>
+                        <a href="#products" class="cat-link"><i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="category-card" style="background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1579298245158-33e6f50451dc?auto=format&fit=crop&w=600&q=80');">
+                    <div class="category-info">
+                        <h3>TRAINING</h3>
+                        <span>Explore 35 Items</span>
+                        <a href="#products" class="cat-link"><i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="category-card" style="background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1518002171953-a080ee817e1f?auto=format&fit=crop&w=600&q=80');">
+                    <div class="category-info">
+                        <h3>FOOTBALL</h3>
+                        <span>Explore 24 Items</span>
+                        <a href="#products" class="cat-link"><i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="products-header">
+                <div class="section-header">
+                    <h2>NEW & TRENDING</h2>
+                    <p>The latest drops engineered for maximum style and comfort</p>
+                </div>
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="running">Running</button>
+                    <button class="filter-btn" data-filter="originals">Originals</button>
+                    <button class="filter-btn" data-filter="training">Training</button>
+                </div>
+            </div>
+
+            <div class="product-grid" id="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="running">
+                    <div class="product-badge sale">20% OFF</div>
+                    <button class="wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80" alt="Ultraboost Light" loading="lazy">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Men's Running</div>
+                        <h3 class="product-title">Ultraboost Light 2025</h3>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>(142)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="current-price">$159.00</span>
+                                <span class="old-price">$190.00</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-name="Ultraboost Light 2025" data-price="159.00" data-img="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="originals">
+                    <div class="product-badge new">NEW</div>
+                    <button class="wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80" alt="NMD_R1 Sneaker" loading="lazy">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Unisex Originals</div>
+                        <h3 class="product-title">NMD_R1 Core Black</h3>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span>(98)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="current-price">$140.00</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-name="NMD_R1 Core Black" data-price="140.00" data-img="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="training">
+                    <div class="product-badge hot">HOT</div>
+                    <button class="wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1514989940723-e8e5ef6ab5c9?auto=format&fit=crop&w=600&q=80" alt="Adizero Adios Pro" loading="lazy">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Men's Racing</div>
+                        <h3 class="product-title">Adizero Adios Pro 3</h3>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>(215)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="current-price">$250.00</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-name="Adizero Adios Pro 3" data-price="250.00" data-img="https://images.unsplash.com/photo-1514989940723-e8e5ef6ab5c9?auto=format&fit=crop&w=600&q=80">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="originals">
+                    <div class="product-badge limited">LIMITED</div>
+                    <button class="wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=600&q=80" alt="Stan Smith Lux" loading="lazy">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Unisex Lifestyle</div>
+                        <h3 class="product-title">Stan Smith Lux Leather</h3>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <span>(320)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="current-price">$120.00</span>
+                                <span class="old-price">$140.00</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-name="Stan Smith Lux Leather" data-price="120.00" data-img="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=600&q=80">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-category="running">
+                    <div class="product-badge new">NEW</div>
+                    <button class="wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80" alt="Supernova Rise" loading="lazy">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Women's Running</div>
+                        <h3 class="product-title">Supernova Rise Running</h3>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>(84)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="current-price">$130.00</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-name="Supernova Rise Running" data-price="130.00" data-img="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-category="originals">
+                    <div class="product-badge hot">TRENDING</div>
+                    <button class="wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80" alt="Forum Low" loading="lazy">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Men's Basketball</div>
+                        <h3 class="product-title">Forum 84 Low Vintage</h3>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span>(176)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="current-price">$110.00</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-name="Forum 84 Low Vintage" data-price="110.00" data-img="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Banner Section -->
+    <section class="banner-section" id="featured">
+        <div class="container">
+            <div class="banner-grid">
+                <div class="banner-box banner-1" style="background-image: linear-gradient(to right, rgba(0,0,0,0.95), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1000&q=80');">
+                    <div class="banner-content">
+                        <span class="tag">STRENGTH & CONDITIONING</span>
+                        <h2>ADIDAS TRAINING GEAR</h2>
+                        <p>Engineered with HEAT.RDY and AEROREADY technology to keep you cool when intensity peaks.</p>
+                        <a href="#products" class="btn btn-primary">SHOP TRAINING</a>
+                    </div>
+                </div>
+                <div class="banner-box banner-2" style="background-image: linear-gradient(to right, rgba(0,0,0,0.95), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1508609386349-236b28328c11?auto=format&fit=crop&w=1000&q=80');">
+                    <div class="banner-content">
+                        <span class="tag">SUSTAINABLE INNOVATION</span>
+                        <h2>END PLASTIC WASTE</h2>
+                        <p>High-performance recycled materials. Because there is no planet B for our athletes.</p>
+                        <a href="#products" class="btn btn-outline">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Technology Showcase -->
+    <section class="tech-showcase" id="sports">
+        <div class="container">
+            <div class="section-header center">
+                <h2>BUILT WITH PURPOSE</h2>
+                <p>Discover the technologies that give you the ultimate edge</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                    <h3>LIGHTBOOST</h3>
+                    <p>The next era of Boost. 30% lighter foam with even greater energy return with every stride.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon"><i class="fa-solid fa-wind"></i></div>
+                    <h3>PRIMEKNIT</h3>
+                    <p>Seamlessly wraps your foot in adaptive support and ultralight comfort for natural movement.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon"><i class="fa-solid fa-shield"></i></div>
+                    <h3>CONTINENTAL™</h3>
+                    <p>Outsole rubber providing extraordinary traction in wet and dry conditions across all surfaces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-box">
+                <div class="newsletter-glow"></div>
+                <div class="newsletter-content">
+                    <h2>JOIN THE ADICLUB & GET 15% OFF</h2>
+                    <p>Sign up for early access to limited drops, exclusive creator collabs, and member-only rewards.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" placeholder="Enter your email address" required id="newsletter-email">
+                            <button type="submit" class="btn btn-primary">SIGN UP</button>
+                        </div>
+                        <p class="form-disclaimer">By signing up, you agree to the Adidas Privacy Policy and Terms of Service.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo footer-logo">
+                        <svg class="adidas-logo" viewBox="0 0 114 78" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M110.5 59.9C108.9 56.6 98.7 38.3 84.1 12.8L74.8 28.9C87.4 51.4 96.1 66.8 96.6 67.8C97.4 69.4 99.2 70.3 101.4 70.3H112.5C113.9 70.3 114.6 69.1 114 67.8C113.1 65.8 112 62.8 110.5 59.9Z"/>
+                            <path d="M66.4 0L24 72.8C23.2 74.2 24 75.6 25.6 75.6H38.2C39.6 75.6 40.8 74.8 41.5 73.6L77.7 11.2L66.4 0Z"/>
+                            <path d="M12.9 39.4L1.4 59.5C0.3 61.4 -0.3 63.3 0.1 65.2C0.6 68.2 3.1 70.3 6.1 70.3H17.2C19.4 70.3 21.2 69.1 22 67.3C23.1 64.9 25.5 60.5 29.5 53.6L12.9 39.4Z"/>
+                        </svg>
+                    </a>
+                    <p class="footer-desc">Impossible is nothing. Empowering creators, athletes, and pioneers worldwide through sport and culture.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>PRODUCTS</h4>
+                    <ul>
+                        <li><a href="#">Ultraboost Light</a></li>
+                        <li><a href="#">Adizero Pro</a></li>
+                        <li><a href="#">NMD_R1 Series</a></li>
+                        <li><a href="#">Stan Smith Classics</a></li>
+                        <li><a href="#">Forum 84 Shoes</a></li>
+                        <li><a href="#">Predator Cleats</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>SPORTS</h4>
+                    <ul>
+                        <li><a href="#">Running</a></li>
+                        <li><a href="#">Football / Soccer</a></li>
+                        <li><a href="#">Basketball</a></li>
+                        <li><a href="#">Training & Gym</a></li>
+                        <li><a href="#">Outdoor & Hiking</a></li>
+                        <li><a href="#">Tennis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>SUPPORT</h4>
+                    <ul>
+                        <li><a href="#">Help & Order Status</a></li>
+                        <li><a href="#">Shipping & Delivery</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Size Charts</a></li>
+                        <li><a href="#">Store Locator</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Cookie Settings</a>
+                    <a href="#">Data Settings</a>
+                </div>
+                <p class="copyright">© 2025 Adidas America, Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Drawer -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>YOUR SHOPPING BAG (<span id="drawer-count">2</span>)</h3>
+            <button class="close-cart" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Dynamic Cart Items injected via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal-price">$299.00</span>
+            </div>
+            <p class="cart-tax-note">Shipping & taxes calculated at checkout</p>
+            <button class="btn btn-primary checkout-btn" id="checkout-btn">PROCEED TO CHECKOUT</button>
+            <button class="btn btn-outline continue-shopping" id="continue-shopping">CONTINUE SHOPPING</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quick-view-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Product">
+                </div>
+                <div class="modal-details">
+                    <span class="modal-category" id="modal-cat">Men's Running</span>
+                    <h2 id="modal-title">Ultraboost Light 2025</h2>
+                    <div class="modal-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(142 reviews)</span>
+                    </div>
+                    <div class="modal-price" id="modal-price">$159.00</div>
+                    <p class="modal-desc">Experience epic energy with the lightest Ultraboost ever. Featuring Light BOOST foam and a redesigned upper for maximum lockdown and breathability.</p>
+                    
+                    <div class="size-selector">
+                        <label>Select Size (US):</label>
+                        <div class="sizes">
+                            <button class="size-btn">7.5</button>
+                            <button class="size-btn">8</button>
+                            <button class="size-btn active">8.5</button>
+                            <button class="size-btn">9</button>
+                            <button class="size-btn">9.5</button>
+                            <button class="size-btn">10</button>
+                            <button class="size-btn">10.5</button>
+                            <button class="size-btn">11</button>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button class="btn btn-primary" id="modal-add-cart">ADD TO BAG</button>
+                        <button class="wishlist-icon-btn"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modal-overlay"></div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toast-msg">Item added to your bag successfully!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CupidSync | The AI Love & Relationship Alchemist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Hearts Background Canvas -->
+    <canvas id="heartCanvas"></canvas>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <span>Cupid<span class="gradient-text">Sync</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#matchmaker">AI Matchmaker</a>
+                <a href="#generator">Love Note AI</a>
+                <a href="#compatibility">Cosmic Sync</a>
+                <a href="#games">Couples Games</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn btn-outline" onclick="openModal('loginModal')">Sign In</button>
+                <button class="btn btn-primary" onclick="scrollToSection('matchmaker')">Start Matching <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <button class="close-drawer" id="closeDrawer"><i class="fa-solid fa-xmark"></i></button>
+        <a href="#features" onclick="closeMobileDrawer()">Features</a>
+        <a href="#matchmaker" onclick="closeMobileDrawer()">AI Matchmaker</a>
+        <a href="#generator" onclick="closeMobileDrawer()">Love Note AI</a>
+        <a href="#compatibility" onclick="closeMobileDrawer()">Cosmic Sync</a>
+        <a href="#games" onclick="closeMobileDrawer()">Couples Games</a>
+        <button class="btn btn-primary w-100 mt-4" onclick="closeMobileDrawer(); scrollToSection('matchmaker')">Start Matching</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge-pill">
+                <i class="fa-solid fa-heart-pulse"></i> Powered by Advanced Emotional AI & Astrology
+            </div>
+            <h1>Crafting Destined Connections & <span class="gradient-text">Deepening True Love</span></h1>
+            <p class="hero-subtitle">Whether you're seeking your soulmate or looking to rekindle the magic with your lifelong partner, CupidSync combines psychology, AI matching, and romantic artistry to make love flourish.</p>
+            <div class="hero-cta">
+                <button class="btn btn-primary btn-lg" onclick="scrollToSection('matchmaker')">
+                    <i class="fa-solid fa-fire-flame-curved"></i> Find Your Match
+                </button>
+                <button class="btn btn-secondary btn-lg" onclick="scrollToSection('generator')">
+                    <i class="fa-solid fa-feather-pointed"></i> Generate Love Note
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>98.4%</h3>
+                    <p>Compatibility Accuracy</p>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <h3>142,500+</h3>
+                    <p>Happy Couples United</p>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <h3>4.9/5</h3>
+                    <p>Love Rating</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card card-1">
+                <i class="fa-solid fa-face-smile-hearts"></i>
+                <div>
+                    <h4>Sarah & Alex</h4>
+                    <p>Matched 3 months ago • 99% Sync</p>
+                </div>
+            </div>
+            <div class="floating-card card-2">
+                <i class="fa-solid fa-champagne-glasses"></i>
+                <div>
+                    <h4>Anniversary Spark</h4>
+                    <p>Date idea generated successfully</p>
+                </div>
+            </div>
+            <div class="central-orb">
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring delay-1"></div>
+                <i class="fa-solid fa-heart"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>The Art & Science of <span class="gradient-text">Modern Romance</span></h2>
+                <p>Everything you need to spark, nurture, and celebrate enduring love.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-brain-circuit"></i></div>
+                    <h3>AI Chemistry Analyzer</h3>
+                    <p>Our neural networks analyze psychological profiles, attachment styles, and core values to predict long-term relationship harmony.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                    <h3>Infinite Love Note AI</h3>
+                    <p>Never struggle for words again. Generate deeply touching poems, apology letters, or flirty texts tailored to your unique voice.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-star-of-life"></i></div>
+                    <h3>Cosmic & Zodiac Sync</h3>
+                    <p>Discover elemental alignments, numerology compatibility, and astrological insights for you and your romantic interest.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-calendar-heart"></i></div>
+                    <h3>Bespoke Date Planner</h3>
+                    <p>Get custom date itineraries generated instantly based on your budget, vibe, location, and love languages.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                    <h3>Couples Bond Quizzes</h3>
+                    <p>Interactive mini-games and deep-dive question decks designed to spark intimacy and reveal hidden desires.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                    <h3>Safe & Verified Sanctuary</h3>
+                    <p>Advanced ID verification, anti-catfish AI screening, and encrypted chats ensure a secure space for genuine hearts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Matchmaker Interactive Section -->
+    <section id="matchmaker" class="section bg-light-pink">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge-pill mb-2"><i class="fa-solid fa-wand-magic"></i> Interactive Demo</div>
+                <h2>AI Soulmate <span class="gradient-text">Compatibility Oracle</span></h2>
+                <p>Test your connection potential instantly. Enter your details and your crush's details below.</p>
+            </div>
+
+            <div class="matchmaker-container">
+                <div class="matchmaker-form-box" id="matchInputBox">
+                    <div class="form-grid">
+                        <!-- Person 1 -->
+                        <div class="person-column">
+                            <h3><i class="fa-solid fa-user-heart"></i> Person A (You)</h3>
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" id="name1" placeholder="e.g., Juliet Capulet" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Zodiac Sign</label>
+                                <select id="sign1" class="form-control">
+                                    <option value="Aries">Aries ♈</option>
+                                    <option value="Taurus">Taurus ♉</option>
+                                    <option value="Gemini">Gemini ♊</option>
+                                    <option value="Cancer">Cancer ♋</option>
+                                    <option value="Leo">Leo ♌</option>
+                                    <option value="Virgo">Virgo ♍</option>
+                                    <option value="Libra">Libra ♎</option>
+                                    <option value="Scorpio">Scorpio ♏</option>
+                                    <option value="Sagittarius">Sagittarius ♐</option>
+                                    <option value="Capricorn">Capricorn ♑</option>
+                                    <option value="Aquarius">Aquarius ♒</option>
+                                    <option value="Pisces">Pisces ♓</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Primary Love Language</label>
+                                <select id="loveLang1" class="form-control">
+                                    <option value="Quality Time">Quality Time</option>
+                                    <option value="Words of Affirmation">Words of Affirmation</option>
+                                    <option value="Physical Touch">Physical Touch</option>
+                                    <option value="Acts of Service">Acts of Service</option>
+                                    <option value="Receiving Gifts">Receiving Gifts</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Person 2 -->
+                        <div class="person-column">
+                            <h3><i class="fa-solid fa-user-gear"></i> Person B (Crush / Partner)</h3>
+                            <div class="form-group">
+                                <label>Their Name</label>
+                                <input type="text" id="name2" placeholder="e.g., Romeo Montague" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Zodiac Sign</label>
+                                <select id="sign2" class="form-control">
+                                    <option value="Aries">Aries ♈</option>
+                                    <option value="Taurus">Taurus ♉</option>
+                                    <option value="Gemini">Gemini ♊</option>
+                                    <option value="Cancer">Cancer ♋</option>
+                                    <option value="Leo" selected>Leo ♌</option>
+                                    <option value="Virgo">Virgo ♍</option>
+                                    <option value="Libra">Libra ♎</option>
+                                    <option value="Scorpio">Scorpio ♏</option>
+                                    <option value="Sagittarius">Sagittarius ♐</option>
+                                    <option value="Capricorn">Capricorn ♑</option>
+                                    <option value="Aquarius">Aquarius ♒</option>
+                                    <option value="Pisces">Pisces ♓</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Primary Love Language</label>
+                                <select id="loveLang2" class="form-control">
+                                    <option value="Quality Time">Quality Time</option>
+                                    <option value="Words of Affirmation" selected>Words of Affirmation</option>
+                                    <option value="Physical Touch">Physical Touch</option>
+                                    <option value="Acts of Service">Acts of Service</option>
+                                    <option value="Receiving Gifts">Receiving Gifts</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button class="btn btn-primary btn-lg w-100" onclick="calculateCompatibility()">
+                            <i class="fa-solid fa-heart-circle-bolt"></i> Run AI Compatibility Alchemy
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Box (Hidden Initially) -->
+                <div class="matchmaker-results-box" id="matchResultBox" style="display: none;">
+                    <div class="loading-animation" id="matchLoading">
+                        <div class="heart-pulse-loader">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3>Consulting the Stars & AI Cupids...</h3>
+                        <p>Analyzing psychological and elemental chemistry...</p>
+                    </div>
+
+                    <div class="result-content" id="matchResultContent" style="display: none;">
+                        <div class="result-header">
+                            <h3 id="resultCoupleTitle">Sarah & Alex</h3>
+                            <div class="compatibility-badge" id="compatibilityScoreNum">94%</div>
+                        </div>
+
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" id="compatibilityBar" style="width: 0%;"></div>
+                        </div>
+
+                        <div class="result-breakdown">
+                            <div class="breakdown-item">
+                                <i class="fa-solid fa-fire"></i>
+                                <div>
+                                    <h4>Elemental Harmony</h4>
+                                    <p id="elementResult">Fire meets Water: Steam and passion!</p>
+                                </div>
+                            </div>
+                            <div class="breakdown-item">
+                                <i class="fa-solid fa-comments"></i>
+                                <div>
+                                    <h4>Communication Flow</h4>
+                                    <p id="commResult">Deep intuitive understanding with natural verbal spark.</p>
+                                </div>
+                            </div>
+                            <div class="breakdown-item">
+                                <i class="fa-solid fa-seedling"></i>
+                                <div>
+                                    <h4>Long-term Potential</h4>
+                                    <p id="longTermResult">Destined for profound emotional growth and mutual devotion.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ai-oracle-advice">
+                            <h4><i class="fa-solid fa-sparkles"></i> Cupid's Special Advice:</h4>
+                            <p id="oracleAdviceText">Focus on planning weekend adventures together. Your combined energies thrive when exploring new horizons!</p>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button class="btn btn-outline" onclick="resetMatchmaker()">
+                                <i class="fa-solid fa-rotate-right"></i> Test Another Match
+                            </button>
+                            <button class="btn btn-primary ml-2" onclick="openModal('saveMatchModal')">
+                                <i class="fa-solid fa-bookmark"></i> Save Result Card
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Note AI Generator Section -->
+    <section id="generator" class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge-pill mb-2"><i class="fa-solid fa-feather"></i> AI Poetry & Prose</div>
+                <h2>Infinite Love Note <span class="gradient-text">Generator</span></h2>
+                <p>Choose your vibe, recipient, and tone to generate a breathtakingly romantic message in seconds.</p>
+            </div>
+
+            <div class="generator-layout">
+                <div class="generator-controls">
+                    <div class="form-group">
+                        <label>Occasion / Vibe</label>
+                        <select id="noteOccasion" class="form-control">
+                            <option value="Deep Soulmate & Forever">Deep Soulmate & Forever</option>
+                            <option value="Flirty & Playful Text">Flirty & Playful Text</option>
+                            <option value="Apology & Making Up">Apology & Making Up</option>
+                            <option value="Missing You Badly">Missing You Badly</option>
+                            <option value="Anniversary & Celebration">Anniversary & Celebration</option>
+                            <option value="Good Morning Sweetheart">Good Morning Sweetheart</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Recipient's Name</label>
+                        <input type="text" id="noteRecipient" class="form-control" placeholder="e.g., My Dearest Elena">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Style & Tone</label>
+                        <select id="noteTone" class="form-control">
+                            <option value="Poetic & Lyrical">Poetic & Lyrical</option>
+                            <option value="Deeply Emotional & Sincere">Deeply Emotional & Sincere</option>
+                            <option value="Sweet & Lighthearted">Sweet & Lighthearted</option>
+                            <option value="Passionate & Intense">Passionate & Intense</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Special Detail or Memory (Optional)</label>
+                        <input type="text" id="noteDetail" class="form-control" placeholder="e.g., that rainy night in Paris / our dog Winston">
+                    </div>
+
+                    <button class="btn btn-primary w-100" onclick="generateLoveNote()">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Craft Romantic Note
+                    </button>
+                </div>
+
+                <div class="generator-output-box">
+                    <div class="output-header">
+                        <h3><i class="fa-solid fa-envelope-open-text"></i> Generated Love Masterpiece</h3>
+                        <div class="output-actions">
+                            <button class="icon-btn" onclick="copyLoveNote()" title="Copy to Clipboard"><i class="fa-solid fa-copy"></i></button>
+                            <button class="icon-btn" onclick="favoriteLoveNote()" title="Save to Favorites"><i class="fa-solid fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="output-content" id="loveNoteOutput">
+                        <p class="placeholder-text">Fill in the options on the left and click "Craft Romantic Note" to let Cupid's pen write your feelings into unforgettable prose...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cosmic Date Ideas & Compatibility Wheel -->
+    <section id="compatibility" class="section bg-light-pink">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Bespoke AI <span class="gradient-text">Date Night Generator</span></h2>
+                <p>Never run out of romantic inspiration. Get customized date plans designed for your budget and vibe.</p>
+            </div>
+
+            <div class="date-planner-box">
+                <div class="date-filters">
+                    <button class="date-filter-btn active" onclick="filterDates('all')">All Vibes</button>
+                    <button class="date-filter-btn" onclick="filterDates('cozy')">Cozy & Intimate</button>
+                    <button class="date-filter-btn" onclick="filterDates('adventure')">Outdoor Adventure</button>
+                    <button class="date-filter-btn" onclick="filterDates('luxury')">Luxury & Fine Dining</button>
+                    <button class="date-filter-btn" onclick="filterDates('budget')">Budget Friendly Magic</button>
+                </div>
+
+                <div class="date-cards-grid" id="dateCardsGrid">
+                    <!-- Cards populated via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Couples Games & Icebreakers Section -->
+    <section id="games" class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge-pill mb-2"><i class="fa-solid fa-gamepad"></i> Intimacy Builder</div>
+                <h2>The Couples <span class="gradient-text">Connection Deck</span></h2>
+                <p>Tap a card below to reveal a deep question, spicy challenge, or romantic prompt for date night.</p>
+            </div>
+
+            <div class="card-deck-container">
+                <div class="flashcard" id="connectionCard" onclick="flipCard()">
+                    <div class="flashcard-inner" id="flashcardInner">
+                        <div class="flashcard-front">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                            <h3>Tap to Draw a Question</h3>
+                            <p>Click here to reveal an intimacy-boosting prompt</p>
+                        </div>
+                        <div class="flashcard-back">
+                            <span class="card-category-tag" id="cardCategory">Deep Intimacy</span>
+                            <h3 id="cardQuestionText">What was the exact moment you realized you were falling in love with me?</h3>
+                            <p class="card-hint"><i class="fa-solid fa-lightbulb"></i> Take turns answering without interruption.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-secondary" onclick="nextCard(event)"><i class="fa-solid fa-shuffle"></i> Draw Next Card</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Love Stories -->
+    <section class="section bg-light-pink">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Real Love Stories <span class="gradient-text">Fueled by CupidSync</span></h2>
+                <p>Hear from couples who found their forever through our AI alchemy.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="testimonial-text">"We used the AI Matchmaker and realized we had a 96% compatibility score. Six months later, we moved in together. The love notes generator also saved me on our anniversary!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+                        <div>
+                            <h4>Marcus & Elena</h4>
+                            <p>Engaged in Kyoto</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="testimonial-text">"After 8 years of marriage, life got a bit routine. The date night planner and the connection deck brought back the exact spark we felt on our very first date."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+                        <div>
+                            <h4>Chloe & David</h4>
+                            <p>Married 8 Years</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="testimonial-text">"The astrological and love language analysis is scarily accurate. It helped us understand each other's emotional triggers instantly. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+                        <div>
+                            <h4>Zoe & Liam</h4>
+                            <p>Soulmates since 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Footer Banner -->
+    <section class="cta-banner">
+        <div class="container text-center">
+            <div class="badge-pill mb-3"><i class="fa-solid fa-heart"></i> Begin Your Love Story</div>
+            <h2>Ready to Experience True <span class="gradient-text">Emotional Synergy?</span></h2>
+            <p>Join over 140,000 romantics transforming their relationship journeys today.</p>
+            <div class="mt-4">
+                <button class="btn btn-primary btn-lg" onclick="scrollToSection('matchmaker')">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Get Started Free
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo mb-3">
+                        <div class="logo-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <span>Cupid<span class="gradient-text">Sync</span></span>
+                    </a>
+                    <p>The ultimate AI-powered romance companion for singles, seekers, and lifelong partners.</p>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="#matchmaker">AI Matchmaker</a>
+                    <a href="#generator">Love Note AI</a>
+                    <a href="#compatibility">Date Planner</a>
+                    <a href="#games">Couples Deck</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Love Language Guide</a>
+                    <a href="#">Zodiac Synergy Chart</a>
+                    <a href="#">Relationship Advice Blog</a>
+                    <a href="#">Safety & Privacy</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Romantic</h4>
+                    <p>Subscribe to our weekly love tips & date night prompts.</p>
+                    <div class="newsletter-form mt-2">
+                        <input type="email" placeholder="Enter your email" class="form-control" id="newsletterEmail">
+                        <button class="btn btn-primary mt-2 w-100" onclick="subscribeNewsletter()">Subscribe <i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CupidSync Inc. Crafted with <i class="fa-solid fa-heart" style="color: var(--primary);"></i> for all believers in true love.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('loginModal')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="text-center mb-4">
+                <div class="logo-icon mx-auto mb-2"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h2>Welcome Back to <span class="gradient-text">CupidSync</span></h2>
+                <p>Sign in to access your saved matches & love notes</p>
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" class="form-control" placeholder="you@domain.com">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" placeholder="••••••••">
+            </div>
+            <button class="btn btn-primary w-100 mt-2" onclick="handleAuthSuccess('Signed in successfully!')">Sign In</button>
+            <p class="text-center mt-3 text-sm">Don't have an account? <a href="#" onclick="switchModal('loginModal', 'registerModal')">Sign up</a></p>
+        </div>
+    </div>
+
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('registerModal')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="text-center mb-4">
+                <div class="logo-icon mx-auto mb-2"><i class="fa-solid fa-heart"></i></div>
+                <h2>Join <span class="gradient-text">CupidSync</span></h2>
+                <p>Start your journey to deeper connection</p>
+            </div>
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" class="form-control" placeholder="Your full name">
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" class="form-control" placeholder="you@domain.com">
+            </div>
+            <div class="form-group">
+                <label>Create Password</label>
+                <input type="password" class="form-control" placeholder="••••••••">
+            </div>
+            <button class="btn btn-primary w-100 mt-2" onclick="handleAuthSuccess('Account created successfully! Welcome to CupidSync.')">Create Account</button>
+        </div>
+    </div>
+
+    <div class="modal" id="saveMatchModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('saveMatchModal')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="text-center mb-3">
+                <div class="logo-icon mx-auto mb-2"><i class="fa-solid fa-bookmark"></i></div>
+                <h2>Save Your Compatibility Card</h2>
+                <p>Enter your email to receive this report and monthly romance horoscopes.</p>
+            </div>
+            <div class="form-group">
+                <label>Your Email</label>
+                <input type="email" class="form-control" id="saveMatchEmail" placeholder="you@domain.com">
+            </div>
+            <button class="btn btn-primary w-100 mt-2" onclick="saveMatchCard()">Save & Send Report <i class="fa-solid fa-heart"></i></button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toastNotification">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">Action completed successfully!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

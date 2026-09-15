@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-paper: #eef1f3;
+  --color-paper-line: #c7d0d6;
+  --color-ink: #0f1b2b;
+  --color-ink-soft: #48586b;
+  --color-rust: #b54a2c;
+  --color-rust-dark: #963b21;
+  --color-sage: #5b7a64;
+  --color-panel: #f7f9fa;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  background-image:
+    linear-gradient(var(--color-paper-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-paper-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+  background-attachment: fixed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

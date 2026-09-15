@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hate Making - Custom Hats & Headwear Studio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Notification Banner -->
+    <div class="top-banner">
+        <p>⚡ Free worldwide shipping on custom orders over $150 &nbsp;|&nbsp; Use code <strong>HEADSTART20</strong> for 20% off your first hat!</p>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-hat-cowboy"></i>
+                <span>Hate Making</span>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#customizer" class="nav-link">Design Studio</a>
+                <a href="#gallery" class="nav-link">Lookbook</a>
+                <a href="#process" class="nav-link">The Craft</a>
+                <a href="#materials" class="nav-link">Materials</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="icon-btn" id="searchBtn" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="icon-btn" id="wishlistBtn" title="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge">0</span></button>
+                <button class="icon-btn cart-btn" id="cartBtn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge" id="cartCount">0</span></button>
+                <a href="#customizer" class="btn btn-primary nav-cta">Start Designing</a>
+                <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fa-solid fa-crown"></i> Handcrafted Headwear Artistry</div>
+                <h1>Wear Your Story. <span>Craft Your Hat.</span></h1>
+                <p>From timeless fedoras to urban snapbacks and cozy bucket hats. Design every stitch, crown height, brim curve, and signature band in our interactive 3D studio.</p>
+                <div class="hero-btns">
+                    <a href="#customizer" class="btn btn-primary btn-lg">Launch 3D Studio <i class="fa-solid fa-wand-magic-sparkles"></i></a>
+                    <a href="#gallery" class="btn btn-outline btn-lg">Explore Masterpieces</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>15,000+</h3>
+                        <p>Hats Crafted</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Ethical Wool & Felt</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>4.9/5</h3>
+                        <p>Client Rating</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card-float card-1">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <div>
+                        <h4>Custom Leather Sweatband</h4>
+                        <p>Embossed with your initials</p>
+                    </div>
+                </div>
+                <div class="hero-card-float card-2">
+                    <div class="rating-stars">★★★★★</div>
+                    <p>"The best custom fit I've ever owned."</p>
+                    <span>— Marcus K., Milan</span>
+                </div>
+                <div class="hero-main-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1514327605112-78c73ae575b4?auto=format&fit=crop&q=80&w=800" alt="Master hatter crafting a custom fedora hat">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Customizer Section -->
+    <section class="customizer-section" id="customizer">
+        <div class="section-header">
+            <span class="section-subtitle">Interactive Studio</span>
+            <h2 class="section-title">Build Your Signature Hat</h2>
+            <p>Customize every element in real-time. Choose your style, color, band, accessories, and size for a truly bespoke piece.</p>
+        </div>
+
+        <div class="customizer-workspace">
+            <!-- Left: Visual Preview -->
+            <div class="preview-panel">
+                <div class="preview-stage" id="previewStage">
+                    <div class="hat-shadow"></div>
+                    <div class="hat-graphic" id="hatGraphic">
+                        <!-- SVG / CSS Dynamic Hat Rendering -->
+                        <div class="hat-crown-wrap">
+                            <div class="hat-crease" id="hatCrease"></div>
+                            <div class="hat-crown" id="hatCrownColor"></div>
+                        </div>
+                        <div class="hat-band" id="hatBandColor">
+                            <div class="hat-band-buckle" id="hatBandAccessory"></div>
+                        </div>
+                        <div class="hat-brim" id="hatBrimColor"></div>
+                    </div>
+                    <div class="preview-badge" id="previewStyleName">Classic Fedora</div>
+                </div>
+                <div class="preview-actions">
+                    <button class="preview-action-btn" id="resetHatBtn"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+                    <button class="preview-action-btn" id="randomizeBtn"><i class="fa-solid fa-dice"></i> Surprise Me</button>
+                    <button class="preview-action-btn" id="view360Btn"><i class="fa-solid fa-cube"></i> 360° Spin</button>
+                </div>
+            </div>
+
+            <!-- Right: Controls & Options -->
+            <div class="controls-panel">
+                <!-- Step Tabs -->
+                <div class="customizer-tabs">
+                    <button class="tab-btn active" data-tab="style"><i class="fa-solid fa-hat-cowboy"></i> Style</button>
+                    <button class="tab-btn" data-tab="materials"><i class="fa-solid fa-shirt"></i> Material & Color</button>
+                    <button class="tab-btn" data-tab="band"><i class="fa-solid fa-ribbon"></i> Hat Band</button>
+                    <button class="tab-btn" data-tab="details"><i class="fa-solid fa-feather"></i> Details & Size</button>
+                </div>
+
+                <!-- Tab Content: Style -->
+                <div class="tab-content active" id="tab-style">
+                    <h3>1. Select Hat Silhouette</h3>
+                    <div class="option-grid style-grid">
+                        <label class="option-card active" data-style="fedora" data-name="Classic Fedora">
+                            <input type="radio" name="hatStyle" value="fedora" checked>
+                            <div class="opt-icon"><i class="fa-solid fa-hat-cowboy"></i></div>
+                            <div>
+                                <h4>Fedora</h4>
+                                <p>Timeless pinched crown & snapped brim</p>
+                            </div>
+                        </label>
+                        <label class="option-card" data-style="panama" data-name="Summer Panama">
+                            <input type="radio" name="hatStyle" value="panama">
+                            <div class="opt-icon"><i class="fa-solid fa-sun"></i></div>
+                            <div>
+                                <h4>Panama</h4>
+                                <p>Lightweight breathable weave for sunny days</p>
+                            </div>
+                        </label>
+                        <label class="option-card" data-style="boater" data-name="Vintage Boater">
+                            <input type="radio" name="hatStyle" value="boater">
+                            <div class="opt-icon"><i class="fa-solid fa-hat-wizard"></i></div>
+                            <div>
+                                <h4>Boater</h4>
+                                <p>Flat top and rigid straight brim elegance</p>
+                            </div>
+                        </label>
+                        <label class="option-card" data-style="bucket" data-name="Urban Bucket">
+                            <input type="radio" name="hatStyle" value="bucket">
+                            <div class="opt-icon"><i class="fa-solid fa-umbrella"></i></div>
+                            <div>
+                                <h4>Bucket Hat</h4>
+                                <p>Relaxed downward sloping brim</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <h3>Crown Crease</h3>
+                    <div class="option-grid crease-grid">
+                        <label class="chip active" data-crease="teardrop">
+                            <input type="radio" name="crease" value="teardrop" checked> Teardrop Pinch
+                        </label>
+                        <label class="chip" data-crease="center-dent">
+                            <input type="radio" name="crease" value="center-dent"> Center Dent
+                        </label>
+                        <label class="chip" data-crease="diamond">
+                            <input type="radio" name="crease" value="diamond"> Diamond Crown
+                        </label>
+                        <label class="chip" data-crease="open">
+                            <input type="radio" name="crease" value="open"> Open Crown (Uncreased)
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Materials & Colors -->
+                <div class="tab-content" id="tab-materials">
+                    <h3>2. Material Quality</h3>
+                    <div class="option-grid material-grid">
+                        <label class="option-card active" data-material="Fur Felt" data-price="180">
+                            <input type="radio" name="material" value="Fur Felt" checked>
+                            <div>
+                                <h4>100% Beaver Fur Felt</h4>
+                                <p class="price-tag">+$180 &bull; Luxurious, velvety & weather-resistant</p>
+                            </div>
+                        </label>
+                        <label class="option-card" data-material="Wool Felt" data-price="120">
+                            <input type="radio" name="material" value="Wool Felt">
+                            <div>
+                                <h4>Australian Wool Felt</h4>
+                                <p class="price-tag">+$120 &bull; Classic sturdy feel, great structure</p>
+                            </div>
+                        </label>
+                        <label class="option-card" data-material="Ecuador Straw" data-price="150">
+                            <input type="radio" name="material" value="Ecuador Straw">
+                            <div>
+                                <h4>Hand-Woven Palm Straw</h4>
+                                <p class="price-tag">+$150 &bull; Ultra-lightweight & breathable</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <h3>Hat Color</h3>
+                    <div class="color-picker-grid">
+                        <button class="color-btn active" data-color="#2c2421" data-name="Midnight Black" style="background: #2c2421;" title="Midnight Black"></button>
+                        <button class="color-btn" data-color="#5c4033" data-name="Chocolate Brown" style="background: #5c4033;" title="Chocolate Brown"></button>
+                        <button class="color-btn" data-color="#8b5a2b" data-name="Cognac Tan" style="background: #8b5a2b;" title="Cognac Tan"></button>
+                        <button class="color-btn" data-color="#6e6b66" data-name="Charcoal Grey" style="background: #6e6b66;" title="Charcoal Grey"></button>
+                        <button class="color-btn" data-color="#d4af37" data-name="Desert Sand" style="background: #d4af37;" title="Desert Sand"></button>
+                        <button class="color-btn" data-color="#2b3e50" data-name="Navy Blue" style="background: #2b3e50;" title="Navy Blue"></button>
+                        <button class="color-btn" data-color="#78281f" data-name="Burgundy Wine" style="background: #78281f;" title="Burgundy Wine"></button>
+                        <button class="color-btn" data-color="#f5f5dc" data-name="Ivory Cream" style="background: #f5f5dc; border: 1px solid #ccc;" title="Ivory Cream"></button>
+                    </div>
+                    <p class="selected-color-label">Selected: <strong id="currentColorName">Midnight Black</strong></p>
+                </div>
+
+                <!-- Tab Content: Hat Band -->
+                <div class="tab-content" id="tab-band">
+                    <h3>3. Ribbon Band & Accents</h3>
+                    <div class="color-picker-grid band-color-grid">
+                        <button class="band-btn active" data-band="#111111" data-name="Black Grosgrain" style="background: #111111;"></button>
+                        <button class="band-btn" data-band="#8B4513" data-name="Leather Saddle" style="background: #8B4513;"></button>
+                        <button class="band-btn" data-band="#800020" data-name="Burgundy Silk" style="background: #800020;"></button>
+                        <button class="band-btn" data-band="#2F4F4F" data-name="Dark Slate" style="background: #2F4F4F;"></button>
+                        <button class="band-btn" data-band="#DAA520" data-name="Gold Satin" style="background: #DAA520;"></button>
+                        <button class="band-btn" data-band="none" data-name="No Band (Clean)" style="background: #e0e0e0; position:relative;"><i class="fa-solid fa-ban" style="color:#666; font-size:12px;"></i></button>
+                    </div>
+
+                    <h3>Side Accessories & Feathers</h3>
+                    <div class="option-grid accessory-grid">
+                        <label class="chip active" data-accessory="feather">
+                            <input type="radio" name="accessory" value="feather" checked> 🪶 Pheasant Feather
+                        </label>
+                        <label class="chip" data-accessory="pin">
+                            <input type="radio" name="accessory" value="pin"> ⚜️ Vintage Metal Pin
+                        </label>
+                        <label class="chip" data-accessory="leather-strap">
+                            <input type="radio" name="accessory" value="leather-strap"> 🧵 Leather Wrap Cord
+                        </label>
+                        <label class="chip" data-accessory="none">
+                            <input type="radio" name="accessory" value="none"> None (Minimalist)
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Details & Size -->
+                <div class="tab-content" id="tab-details">
+                    <h3>4. Head Size & Fit</h3>
+                    <div class="size-selector">
+                        <div class="size-info-row">
+                            <span>Select Your Size: <strong id="selectedSizeLabel">59 cm (L)</strong></span>
+                            <button class="text-link" id="sizeGuideBtn"><i class="fa-regular fa-question-circle"></i> Size Guide</button>
+                        </div>
+                        <div class="option-grid size-grid">
+                            <label class="chip" data-size="55 cm (S)"><input type="radio" name="size" value="55 cm (S)"> 55cm (S)</label>
+                            <label class="chip" data-size="57 cm (M)"><input type="radio" name="size" value="57 cm (M)"> 57cm (M)</label>
+                            <label class="chip active" data-size="59 cm (L)"><input type="radio" name="size" value="59 cm (L)" checked> 59cm (L)</label>
+                            <label class="chip" data-size="61 cm (XL)"><input type="radio" name="size" value="61 cm (XL)"> 61cm (XL)</label>
+                            <label class="chip" data-size="63 cm (XXL)"><input type="radio" name="size" value="63 cm (XXL)"> 63cm (XXL)</label>
+                        </div>
+                    </div>
+
+                    <h3>Personalized Sweatband Engraving (Free)</h3>
+                    <div class="engrave-input-wrap">
+                        <input type="text" id="engravingText" maxlength="18" placeholder="e.g. M.K. or FOR A.J. 2024">
+                        <span class="char-count">18 chars max</span>
+                    </div>
+                    <p class="hint-text"><i class="fa-solid fa-circle-info"></i> Your custom text is hot-foil embossed into genuine Italian leather inside the crown.</p>
+                </div>
+
+                <!-- Summary & Add to Cart Bar -->
+                <div class="customizer-footer">
+                    <div class="price-display">
+                        <span class="price-label">Total Custom Price</span>
+                        <h3 id="totalPrice">$180.00</h3>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn btn-outline" id="saveDesignBtn"><i class="fa-regular fa-bookmark"></i> Save Design</button>
+                        <button class="btn btn-primary" id="addToCartBtn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lookbook / Featured Gallery -->
+    <section class="gallery-section" id="gallery">
+        <div class="section-header">
+            <span class="section-subtitle">The Lookbook</span>
+            <h2 class="section-title">Masterpieces by Our Community</h2>
+            <p>Explore breathtaking hats designed by fellow headwear enthusiasts and crafted in our atelier.</p>
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Styles</button>
+            <button class="filter-btn" data-filter="fedora">Fedoras</button>
+            <button class="filter-btn" data-filter="panama">Panamas</button>
+            <button class="filter-btn" data-filter="boater">Boaters</button>
+            <button class="filter-btn" data-filter="limited">Limited Edition</button>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="fedora">
+                <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&q=80&w=600" alt="The Greenwich Fedora">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>The Greenwich Fedora</h3>
+                        <p>Charcoal Fur Felt &bull; Black Grosgrain Band</p>
+                        <span class="gallery-price">$195</span>
+                    </div>
+                    <button class="btn btn-sm btn-primary quick-view-btn" data-title="The Greenwich Fedora" data-price="$195" data-img="https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&q=80&w=600">Customize Similar</button>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="panama">
+                <img src="https://images.unsplash.com/photo-1534215754734-18e55d13b346?auto=format&fit=crop&q=80&w=600" alt="Havana Breeze Panama">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Havana Breeze Panama</h3>
+                        <p>Natural Palm Straw &bull; Navy Blue Ribbon</p>
+                        <span class="gallery-price">$165</span>
+                    </div>
+                    <button class="btn btn-sm btn-primary quick-view-btn" data-title="Havana Breeze Panama" data-price="$165" data-img="https://images.unsplash.com/photo-1534215754734-18e55d13b346?auto=format&fit=crop&q=80&w=600">Customize Similar</button>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="boater">
+                <img src="https://images.unsplash.com/photo-1514327605112-78c73ae575b4?auto=format&fit=crop&q=80&w=600" alt="Venetian Summer Boater">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Venetian Summer Boater</h3>
+                        <p>Ivory Straw &bull; Burgundy Silk Striped Band</p>
+                        <span class="gallery-price">$175</span>
+                    </div>
+                    <button class="btn btn-sm btn-primary quick-view-btn" data-title="Venetian Summer Boater" data-price="$175" data-img="https://images.unsplash.com/photo-1514327605112-78c73ae575b4?auto=format&fit=crop&q=80&w=600">Customize Similar</button>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="limited">
+                <img src="https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&q=80&w=600" alt="Midnight Wanderer">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Midnight Wanderer</h3>
+                        <p>Deep Espresso Felt &bull; Leather Cord & Feather</p>
+                        <span class="gallery-price">$210</span>
+                    </div>
+                    <button class="btn btn-sm btn-primary quick-view-btn" data-title="Midnight Wanderer" data-price="$210" data-img="https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&q=80&w=600">Customize Similar</button>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="fedora">
+                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=600" alt="The Tuscan Rider">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>The Tuscan Rider</h3>
+                        <p>Cognac Fur Felt &bull; Vintage Brass Pin</p>
+                        <span class="gallery-price">$190</span>
+                    </div>
+                    <button class="btn btn-sm btn-primary quick-view-btn" data-title="The Tuscan Rider" data-price="$190" data-img="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=600">Customize Similar</button>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="limited">
+                <img src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&q=80&w=600" alt="Alpine Explorer">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Alpine Explorer</h3>
+                        <p>Forest Green Felt &bull; Braided Cord</p>
+                        <span class="gallery-price">$185</span>
+                    </div>
+                    <button class="btn btn-sm btn-primary quick-view-btn" data-title="Alpine Explorer" data-price="$185" data-img="https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&q=80&w=600">Customize Similar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Craft / Process Section -->
+    <section class="process-section" id="process">
+        <div class="process-container">
+            <div class="section-header text-left">
+                <span class="section-subtitle">Traditional Artistry</span>
+                <h2 class="section-title">How We Handmake Your Hat</h2>
+                <p>Every hat is crafted using century-old millinery techniques combined with modern precision sizing.</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-num">01</div>
+                    <div class="step-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                    <h3>Blocking & Steam</h3>
+                    <p>Raw felt or straw is soaked, steamed over boiling kettles, and pulled tightly over hand-carved wooden hat blocks.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">02</div>
+                    <div class="step-icon"><i class="fa-solid fa-scissors"></i></div>
+                    <h3>Shaping & Creasing</h3>
+                    <p>Our master hatters hand-crease the crown and expertly curl the brim to achieve your chosen silhouette.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">03</div>
+                    <div class="step-icon"><i class="fa-solid fa-needle-thread"></i></div>
+                    <h3>Trimming & Banding</h3>
+                    <p>Grosgrain ribbons, leather cords, and custom feathers are meticulously hand-stitched onto the hat base.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">04</div>
+                    <div class="step-icon"><i class="fa-solid fa-signature"></i></div>
+                    <h3>Bespoke Finishing</h3>
+                    <p>Italian leather sweatbands are sewn in, hot-foil embossed with your personal initials, and boxed in our signature hat box.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials Section -->
+    <section class="materials-section" id="materials">
+        <div class="section-header">
+            <span class="section-subtitle">Uncompromising Quality</span>
+            <h2 class="section-title">The Finest Materials on Earth</h2>
+            <p>We source cruelty-free beaver fur, ethical Australian wool, and artisan-woven Ecuadorian palm straw.</p>
+        </div>
+
+        <div class="materials-grid">
+            <div class="material-card">
+                <div class="material-img" style="background-image: url('https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=600');"></div>
+                <div class="material-body">
+                    <h3>Beaver & Rabbit Fur Felt</h3>
+                    <p>Incomparably soft, exceptionally water-repellent, and holds its crease through rain or shine for decades.</p>
+                    <ul class="material-features">
+                        <li><i class="fa-solid fa-check"></i> Weatherproof finish</li>
+                        <li><i class="fa-solid fa-check"></i> Velvet-smooth handfeel</li>
+                        <li><i class="fa-solid fa-check"></i> Lifetime durability</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="material-card">
+                <div class="material-img" style="background-image: url('https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&q=80&w=600');"></div>
+                <div class="material-body">
+                    <h3>Hand-Woven Palm Straw</h3>
+                    <p>Harvested in Ecuador and tightly hand-braided by master weavers, providing cool shade and lightweight comfort.</p>
+                    <ul class="material-features">
+                        <li><i class="fa-solid fa-check"></i> UPF 50+ UV Sun Protection</li>
+                        <li><i class="fa-solid fa-check"></i> Flexible & crush-resistant</li>
+                        <li><i class="fa-solid fa-check"></i> Breathable airflow</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="material-card">
+                <div class="material-img" style="background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=600');"></div>
+                <div class="material-body">
+                    <h3>Italian Vegetable-Tanned Leather</h3>
+                    <p>Used for our internal sweatbands and exterior accent cords. Ages gracefully with a rich patina over time.</p>
+                    <ul class="material-features">
+                        <li><i class="fa-solid fa-check"></i> Supple moisture-wicking fit</li>
+                        <li><i class="fa-solid fa-check"></i> Custom gold foil engraving</li>
+                        <li><i class="fa-solid fa-check"></i> Chemical-free tanning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section" id="reviews">
+        <div class="section-header">
+            <span class="section-subtitle">Client Testimonials</span>
+            <h2 class="section-title">Loved by Hat Connoisseurs</h2>
+            <p>See what our customers have to say about their custom Hate Making creations.</p>
+        </div>
+
+        <div class="reviews-slider">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"I was skeptical about ordering a custom hat online, but the 3D customizer gave me exact expectations. When it arrived in the rigid hat box with my initials embossed on the leather sweatband, I was blown away!"</p>
+                <div class="reviewer-info">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Elena Rostova">
+                    <div>
+                        <h4>Elena Rostova</h4>
+                        <span>Fashion Editor, Paris</span>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"The beaver fur felt is top tier. It survived a torrential downpour in London last week and dried right back to its original shape without a single watermark. Worth every penny."</p>
+                <div class="reviewer-info">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Julian Vance">
+                    <div>
+                        <h4>Julian Vance</h4>
+                        <span>Architect, London</span>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"The packaging is a work of art itself. My Panama hat fits like a glove thanks to the accurate sizing guide. I've already ordered a second one for autumn!"</p>
+                <div class="reviewer-info">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150" alt="Sophia Chen">
+                    <div>
+                        <h4>Sophia Chen</h4>
+                        <span>Creative Director, NYC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter / VIP Club -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h2>Join The Hatter's Circle</h2>
+                <p>Subscribe to receive secret drop alerts, private discount codes, and invites to virtual hat-shaping masterclasses.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email address..." required>
+                    <button type="submit" class="btn btn-primary">Join Club</button>
+                </form>
+                <span class="privacy-note"><i class="fa-solid fa-lock"></i> We respect your privacy. Unsubscribe at any time.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-hat-cowboy"></i>
+                    <span>Hate Making</span>
+                </a>
+                <p>Bespoke handmade headwear crafted for individuals who appreciate timeless style, premium felt, and custom details.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Custom Studio</h4>
+                <ul>
+                    <li><a href="#customizer">Fedora Studio</a></li>
+                    <li><a href="#customizer">Panama Creator</a></li>
+                    <li><a href="#customizer">Bucket & Boater</a></li>
+                    <li><a href="#customizer">Size Guide</a></li>
+                    <li><a href="#customizer">Leather Engraving</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>The Atelier</h4>
+                <ul>
+                    <li><a href="#process">Our Craftsmanship</a></li>
+                    <li><a href="#materials">Felt & Straw Sourcing</a></li>
+                    <li><a href="#gallery">Client Lookbook</a></li>
+                    <li><a href="#reviews">Press & Reviews</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="#">Track Your Order</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Hat Care & Cleaning</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hate Making Studio. All Rights Reserved. Crafted with passion & precision.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Settings</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer Modal -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Your Hat Studio Cart</h3>
+            <button class="close-cart" id="closeCartBtn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <!-- Dynamic Cart Items -->
+            <div class="empty-cart-msg" id="emptyCartMsg">
+                <i class="fa-solid fa-hat-cowboy" style="font-size: 48px; color: #d4af37; margin-bottom: 15px;"></i>
+                <p>Your cart is currently empty.</p>
+                <a href="#customizer" class="btn btn-primary btn-sm" id="shopNowCartBtn">Design Your Hat Now</a>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-subtotal">
+                <span>Subtotal:</span>
+                <strong id="cartSubtotal">$180.00</strong>
+            </div>
+            <p class="cart-shipping-note">Calculated at checkout. Free shipping applied!</p>
+            <button class="btn btn-primary btn-block" id="checkoutBtn">Proceed to Secure Checkout <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Quick View / Save Design Modal -->
+    <div class="modal" id="designModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModalBtn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body" id="modalBodyText">
+                <h3><i class="fa-solid fa-bookmark" style="color: #d4af37;"></i> Design Saved Successfully!</h3>
+                <p>Your unique hat recipe has been saved to your browser session. You can retrieve it anytime or share the custom link with friends.</p>
+                <div class="modal-link-box">
+                    <input type="text" readonly value="https://hatemaking.com/studio?design=fedora-black-beaver-1892" id="designLinkInput">
+                    <button class="btn btn-primary btn-sm" id="copyLinkBtn">Copy Link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Size Guide Modal -->
+    <div class="modal" id="sizeGuideModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeSizeModalBtn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <h3><i class="fa-solid fa-ruler" style="color: #d4af37;"></i> Hat Size Measurement Guide</h3>
+                <p>Wrap a flexible measuring tape around your head about 1 cm above your ears and eyebrows where your hat would normally rest comfortably.</p>
+                <table class="size-table">
+                    <tr><th>Size</th><th>Centimeters</th><th>Inches</th></tr>
+                    <tr><td>Small (S)</td><td>54 - 55 cm</td><td>21¼ - 21½"</td></tr>
+                    <tr><td>Medium (M)</td><td>56 - 57 cm</td><td>22 - 22½"</td></tr>
+                    <tr><td>Large (L)</td><td>58 - 59 cm</td><td>22¾ - 23¼"</td></tr>
+                    <tr><td>X-Large (XL)</td><td>60 - 61 cm</td><td>23½ - 24"</td></tr>
+                    <tr><td>XX-Large (XXL)</td><td>62 - 63 cm</td><td>24½ - 24¾"</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-check-circle"></i>
+        <span id="toastMsg">Item added to your cart successfully!</span>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>

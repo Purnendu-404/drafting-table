@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrewLab | Artisan Coffee & Roastery</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Notification Banner -->
+    <div class="top-banner">
+        <p>✨ Free shipping on all whole bean orders over $35 &nbsp;|&nbsp; Use code <strong>LAB15</strong> for 15% off your first blend</p>
+        <button id="close-banner" aria-label="Close banner"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="nav-container container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-flask"></i>
+                </div>
+                <span>Brew<span>Lab</span></span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#beans">Shop Beans</a></li>
+                    <li><a href="#story">Our Craft</a></li>
+                    <li><a href="#workshops">Workshops</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="action-btn search-btn" id="search-toggle" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="action-btn cart-btn" id="cart-toggle" aria-label="Shopping Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-badge">2</span>
+                </button>
+                <a href="#menu" class="btn btn-primary order-online-btn">Order Ahead</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Modal / Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-modal">
+            <button class="close-search" id="close-search"><i class="fa-solid fa-xmark"></i></button>
+            <h3>What are you craving today?</h3>
+            <div class="search-input-wrap">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search for lattes, cold brew, beans, pastries..." id="search-input">
+            </div>
+            <div class="search-suggestions">
+                <span>Popular:</span>
+                <button class="suggestion-tag">Nitro Cold Brew</button>
+                <button class="suggestion-tag">Ethiopian Yirgacheffe</button>
+                <button class="suggestion-tag">Matcha Latte</button>
+                <button class="suggestion-tag">Almond Croissant</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Lab Order (<span id="cart-count">2</span>)</h3>
+            <button class="close-cart" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Sample Cart Item 1 -->
+            <div class="cart-item">
+                <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&q=80&w=200" alt="Iced Vanilla Bean Latte">
+                <div class="cart-item-details">
+                    <h4>Iced Vanilla Bean Latte</h4>
+                    <span class="item-option">Oat Milk • Regular • Less Sweet</span>
+                    <div class="item-price-qty">
+                        <span class="price">$6.50</span>
+                        <div class="qty-control">
+                            <button>-</button>
+                            <span>1</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="remove-item"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+            <!-- Sample Cart Item 2 -->
+            <div class="cart-item">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=200" alt="Butter Croissant">
+                <div class="cart-item-details">
+                    <h4>Artisanal Butter Croissant</h4>
+                    <span class="item-option">Warmed</span>
+                    <div class="item-price-qty">
+                        <span class="price">$4.25</span>
+                        <div class="qty-control">
+                            <button>-</button>
+                            <span>1</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="remove-item"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span class="subtotal-price">$10.75</span>
+            </div>
+            <p class="cart-tax-note">Taxes and calculated at checkout</p>
+            <button class="btn btn-primary btn-full" id="checkout-btn">Proceed to Checkout ($10.75)</button>
+        </div>
+    </div>
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-elements">
+            <div class="glow-orb orb-1"></div>
+            <div class="glow-orb orb-2"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Now Roasting: Summer Single Origin Batch #42</span>
+                </div>
+                <h1>Precision Roasted.<br>Artisan <span class="gradient-text">Brewed.</span></h1>
+                <p>Welcome to BrewLab, where coffee science meets culinary artistry. We ethically source rare beans and precision-roast them daily in small batches for the ultimate flavor profile.</p>
+                <div class="hero-btns">
+                    <a href="#menu" class="btn btn-primary btn-lg">Explore Menu <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#beans" class="btn btn-outline btn-lg">Shop Whole Beans</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Fair Trade & Organic</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <h3>14+</h3>
+                        <p>Global Farm Partners</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <h3>4.9★</h3>
+                        <p>Over 2,500+ Reviews</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800" alt="Pour over coffee being brewed at BrewLab">
+                    <div class="floating-badge badge-1">
+                        <i class="fa-solid fa-temperature-three-quarters"></i>
+                        <div>
+                            <span>Optimal Extraction</span>
+                            <strong>93°C Precision</strong>
+                        </div>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <i class="fa-solid fa-mug-hot"></i>
+                        <div>
+                            <span>Freshly Roasted</span>
+                            <strong>Today at 6:00 AM</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Banner -->
+    <div class="brand-marquee">
+        <div class="marquee-track">
+            <span>• ETHICALLY SOURCED</span>
+            <span>• ROASTED IN SMALL BATCHES</span>
+            <span>• 100% ARABICA</span>
+            <span>• SUSTAINABLE PACKAGING</span>
+            <span>• EXPERT BARISTAS</span>
+            <span>• ETHICALLY SOURCED</span>
+            <span>• ROASTED IN SMALL BATCHES</span>
+            <span>• 100% ARABICA</span>
+            <span>• SUSTAINABLE PACKAGING</span>
+            <span>• EXPERT BARISTAS</span>
+        </div>
+    </div>
+
+    <!-- Experience / Features Section -->
+    <section class="features section-pad" id="story">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">The BrewLab Difference</span>
+                <h2>Crafted with Scientific Precision & Soul</h2>
+                <p>Every cup we serve is the result of relentless testing, temperature control, and deep passion.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3>Direct-Trade Beans</h3>
+                    <p>We partner directly with independent micro-farmers across Ethiopia, Colombia, and Guatemala, ensuring sustainable wages and superior bean quality.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-fire-burner"></i>
+                    </div>
+                    <h3>In-House Roasting</h3>
+                    <p>Our vintage cast-iron roaster operates right on site. We roast in micro-batches of 5kg to guarantee peak freshness and distinct flavor notes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <h3>Mineral-Purified Water</h3>
+                    <p>Water makes up 98% of your coffee. We use a 7-stage reverse osmosis filtration system infused with custom mineral profiles for silky extractions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3>Award-Winning Baristas</h3>
+                    <p>Our team consists of certified Q-graders and regional latte art champions dedicated to mastering the craft in every single pour.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Menu Section -->
+    <section class="menu-section section-pad bg-light" id="menu">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">Lab Menu</span>
+                <h2>Explore Our Signature Elixirs</h2>
+                <p>From velvety classics to innovative experimental brews, crafted for your daily ritual.</p>
+            </div>
+
+            <!-- Menu Category Tabs -->
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-category="all">All Items</button>
+                <button class="tab-btn" data-category="espresso">Espresso Bar</button>
+                <button class="tab-btn" data-category="cold">Cold Brews & Nitro</button>
+                <button class="tab-btn" data-category="specialty">Specialty Labs</button>
+                <button class="tab-btn" data-category="bakery">Fresh Bakery</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menu-grid">
+                
+                <!-- Item 1 -->
+                <div class="menu-card" data-category="espresso">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&q=80&w=500" alt="Signature Flat White">
+                        <span class="menu-badge">Best Seller</span>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-title-price">
+                            <h3>Signature Flat White</h3>
+                            <span class="menu-price">$5.25</span>
+                        </div>
+                        <p>Double ristretto shot with micro-foamed organic whole milk poured to silky perfection.</p>
+                        <div class="menu-footer">
+                            <span class="calories"><i class="fa-solid fa-fire"></i> 140 kcal</span>
+                            <button class="btn-add-cart" data-name="Signature Flat White" data-price="5.25" data-img="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&q=80&w=500">
+                                <i class="fa-solid fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="menu-card" data-category="cold">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&q=80&w=500" alt="Nitro Cold Brew">
+                        <span class="menu-badge nitro">Staff Pick</span>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-title-price">
+                            <h3>Nitro Cold Brew</h3>
+                            <span class="menu-price">$5.75</span>
+                        </div>
+                        <p>Steeped for 20 hours, infused with nitrogen gas for a cascading velvety stout-like head.</p>
+                        <div class="menu-footer">
+                            <span class="calories"><i class="fa-solid fa-fire"></i> 15 kcal</span>
+                            <button class="btn-add-cart" data-name="Nitro Cold Brew" data-price="5.75" data-img="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&q=80&w=500">
+                                <i class="fa-solid fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="menu-card" data-category="specialty">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&q=80&w=500" alt="Lavender Honey Matchaccino">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-title-price">
+                            <h3>Lavender Honey Matcha</h3>
+                            <span class="menu-price">$6.50</span>
+                        </div>
+                        <p>Ceremonial grade Uji matcha whisked with house-infused organic lavender and wild wildflower honey.</p>
+                        <div class="menu-footer">
+                            <span class="calories"><i class="fa-solid fa-fire"></i> 180 kcal</span>
+                            <button class="btn-add-cart" data-name="Lavender Honey Matcha" data-price="6.50" data-img="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&q=80&w=500">
+                                <i class="fa-solid fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="menu-card" data-category="espresso">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=500" alt="Pour Over Single Origin">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-title-price">
+                            <h3>Pour Over Single Origin</h3>
+                            <span class="menu-price">$6.00</span>
+                        </div>
+                        <p>Hand-poured Chemex brew featuring our rotating seasonal guest roast with tasting notes of bergamot and jasmine.</p>
+                        <div class="menu-footer">
+                            <span class="calories"><i class="fa-solid fa-fire"></i> 5 kcal</span>
+                            <button class="btn-add-cart" data-name="Pour Over Single Origin" data-price="6.00" data-img="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=500">
+                                <i class="fa-solid fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="menu-card" data-category="bakery">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=500" alt="Almond Croissant">
+                        <span class="menu-badge fresh">Baked Fresh</span>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-title-price">
+                            <h3>Almond Frangipane Croissant</h3>
+                            <span class="menu-price">$4.85</span>
+                        </div>
+                        <p>Double-baked flaky French croissant filled with rich almond cream and topped with toasted sliced almonds.</p>
+                        <div class="menu-footer">
+                            <span class="calories"><i class="fa-solid fa-fire"></i> 380 kcal</span>
+                            <button class="btn-add-cart" data-name="Almond Frangipane Croissant" data-price="4.85" data-img="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=500">
+                                <i class="fa-solid fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="menu-card" data-category="specialty">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80&w=500" alt="Spanish Bombon">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-title-price">
+                            <h3>Café Bombón Lab Twist</h3>
+                            <span class="menu-price">$5.50</span>
+                        </div>
+                        <p>Equal parts rich espresso and sweetened condensed milk, layered with a hint of orange zest and cinnamon.</p>
+                        <div class="menu-footer">
+                            <span class="calories"><i class="fa-solid fa-fire"></i> 220 kcal</span>
+                            <button class="btn-add-cart" data-name="Café Bombón Lab Twist" data-price="5.50" data-img="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80&w=500">
+                                <i class="fa-solid fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu-cta text-center">
+                <p>Looking for custom milk alternatives or syrups? (Oat, Almond, Macadamia, House Vanilla, Cardamom available)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Whole Bean Section -->
+    <section class="beans-section section-pad" id="beans">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">Roastery Direct</span>
+                <h2>Take the BrewLab Experience Home</h2>
+                <p>Freshly roasted whole beans shipped to your doorstep in eco-friendly, resealable valve bags.</p>
+            </div>
+
+            <div class="beans-grid">
+                
+                <!-- Bean 1 -->
+                <div class="bean-card">
+                    <div class="bean-img">
+                        <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&q=80&w=500" alt="Ethiopian Yirgacheffe Bag">
+                        <div class="roast-level light">Light Roast</div>
+                    </div>
+                    <div class="bean-info">
+                        <h3>Ethiopian Yirgacheffe</h3>
+                        <p class="origin"><i class="fa-solid fa-location-dot">></i> Gedeo Zone, Ethiopia</p>
+                        <div class="tasting-notes">
+                            <span>Jasmine</span>
+                            <span>Bergamot</span>
+                            <span>Blueberry</span>
+                        </div>
+                        <div class="bean-price-row">
+                            <span class="price">$18.50 <small>/ 12 oz</small></span>
+                            <button class="btn btn-sm btn-primary">Add to Bag</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bean 2 -->
+                <div class="bean-card featured-bean">
+                    <div class="popular-tag">Best Seller</div>
+                    <div class="bean-img">
+                        <img src="https://images.unsplash.com/photo-1610884612423-2404285df69e?auto=format&fit=crop&q=80&w=500" alt="Midnight Chemistry Blend">
+                        <div class="roast-level dark">Dark Roast</div>
+                    </div>
+                    <div class="bean-info">
+                        <h3>Midnight Chemistry Blend</h3>
+                        <p class="origin"><i class="fa-solid fa-location-dot"></i> Colombia & Sumatra</p>
+                        <div class="tasting-notes">
+                            <span>Dark Chocolate</span>
+                            <span>Smoked Oak</span>
+                            <span>Black Cherry</span>
+                        </div>
+                        <div class="bean-price-row">
+                            <span class="price">$17.00 <small>/ 12 oz</small></span>
+                            <button class="btn btn-sm btn-primary">Add to Bag</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bean 3 -->
+                <div class="bean-card">
+                    <div class="bean-img">
+                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&q=80&w=500" alt="Guatemala Antigua Bag">
+                        <div class="roast-level medium">Medium Roast</div>
+                    </div>
+                    <div class="bean-info">
+                        <h3>Guatemala Antigua</h3>
+                        <p class="origin"><i class="fa-solid fa-location-dot"></i> Antigua Valley</p>
+                        <div class="tasting-notes">
+                            <span>Milk Chocolate</span>
+                            <span>Toasted Walnut</span>
+                            <span>Green Apple</span>
+                        </div>
+                        <div class="bean-price-row">
+                            <span class="price">$19.00 <small>/ 12 oz</small></span>
+                            <button class="btn btn-sm btn-primary">Add to Bag</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Subscription Banner -->
+            <div class="subscription-banner">
+                <div class="sub-content">
+                    <div class="sub-icon"><i class="fa-solid fa-box-open"></i></div>
+                    <div>
+                        <h3>Never Run Out of Coffee Again</h3>
+                        <p>Subscribe to our monthly bean delivery and get <strong>20% off</strong> plus free grinder calibration guides.</p>
+                    </div>
+                </div>
+                <a href="#workshops" class="btn btn-light">Build Your Subscription</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshops & Events Section -->
+    <section class="workshops-section section-pad bg-dark" id="workshops">
+        <div class="container">
+            <div class="section-header text-center light-theme">
+                <span class="subtitle">BrewLab Academy</span>
+                <h2>Master the Craft at Our Barista Workshops</h2>
+                <p>Join our weekend masterclasses led by master roasters and Q-graders in our downtown lab.</p>
+            </div>
+
+            <div class="workshop-grid">
+                
+                <div class="workshop-card">
+                    <div class="workshop-date">
+                        <span class="day">18</span>
+                        <span class="month">OCT</span>
+                    </div>
+                    <div class="workshop-details">
+                        <span class="badge-tag">Weekend Masterclass</span>
+                        <h3>Home Pour-Over Chemistry</h3>
+                        <p>Learn extraction ratios, water temperature variables, and grind size distribution for flawless V60 brews.</p>
+                        <div class="workshop-meta">
+                            <span><i class="fa-regular fa-clock"></i> 2.5 Hours</span>
+                            <span><i class="fa-solid fa-user-group"></i> 8 Spots Left</span>
+                            <span class="workshop-price">$65</span>
+                        </div>
+                        <button class="btn btn-outline-light btn-sm">Reserve Spot</button>
+                    </div>
+                </div>
+
+                <div class="workshop-card">
+                    <div class="workshop-date">
+                        <span class="day">25</span>
+                        <span class="month">OCT</span>
+                    </div>
+                    <div class="workshop-details">
+                        <span class="badge-tag">Intermediate</span>
+                        <h3>Latte Art & Microfoam Physics</h3>
+                        <p>Master milk steaming thermodynamics, pitcher control, and pour tulips, hearts, and rosettas like a pro.</p>
+                        <div class="workshop-meta">
+                            <span><i class="fa-regular fa-clock"></i> 3 Hours</span>
+                            <span><i class="fa-solid fa-user-group"></i> 3 Spots Left</span>
+                            <span class="workshop-price">$85</span>
+                        </div>
+                        <button class="btn btn-outline-light btn-sm">Reserve Spot</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Reviews Section -->
+    <section class="reviews-section section-pad" id="reviews">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">Community Love</span>
+                <h2>What Coffee Lovers Are Saying</h2>
+                <p>Read real experiences from our daily regulars and specialty coffee connoisseurs.</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"The nitro cold brew here is transcendent. I’ve visited specialty shops across Europe and New York, and BrewLab easily rivals the best in the world."</p>
+                    <div class="reviewer">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Sarah Jenkins">
+                        <div>
+                            <h4>Sarah Jenkins</h4>
+                            <span>Food & Travel Writer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Their subscription service has completely elevated my morning routine. The Ethiopian Yirgacheffe beans arrive two days after roasting. Incredible aroma!"</p>
+                    <div class="reviewer">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Marcus Vance">
+                        <div>
+                            <h4>Marcus Vance</h4>
+                            <span>Software Architect & Regular</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Attended the Latte Art workshop last weekend. The instructors were patient, knowledgeable, and the equipment was top tier. Highly recommend!"</p>
+                    <div class="reviewer">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150" alt="Elena Rostova">
+                        <div>
+                            <h4>Elena Rostova</h4>
+                            <span>Design Director</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram / Gallery Grid -->
+    <section class="insta-section">
+        <div class="insta-header">
+            <h3><i class="fa-brands fa-instagram"></i> Follow @BrewLabCoffee</h3>
+            <p>Tag #BrewLabExperience to be featured on our wall</p>
+        </div>
+        <div class="insta-grid">
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=400" alt="Latte art pour">
+                <div class="insta-overlay"><i class="fa-brands fa-instagram"></i></div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&q=80&w=400" alt="Coffee beans roasting">
+                <div class="insta-overlay"><i class="fa-brands fa-instagram"></i></div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=400" alt="Cozy cafe interior">
+                <div class="insta-overlay"><i class="fa-brands fa-instagram"></i></div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=400" alt="Pour over setup">
+                <div class="insta-overlay"><i class="fa-brands fa-instagram"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="#" class="logo footer-logo">
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <span>Brew<span>Lab</span></span>
+                </a>
+                <p>Pushing the boundaries of specialty coffee through rigorous sourcing, precision roasting, and artisanal hospitality.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#menu">Menu & Ordering</a></li>
+                    <li><a href="#beans">Whole Bean Shop</a></li>
+                    <li><a href="#story">Our Craft & Science</a></li>
+                    <li><a href="#workshops">Barista Workshops</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Visit the Lab</h4>
+                <p><i class="fa-solid fa-location-dot"></i> 482 Innovation Blvd, Suite 101<br>Seattle, WA 98101</p>
+                <p><i class="fa-solid fa-clock"></i> Mon–Fri: 6:30 AM – 7:00 PM<br>Sat–Sun: 7:00 AM – 8:00 PM</p>
+                <p><i class="fa-solid fa-phone"></i> (206) 555-BREW</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Join the Club</h4>
+                <p>Subscribe for weekly brewing guides, secret menu drops, and 15% off.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required id="newsletter-input">
+                    <button type="submit" class="btn btn-primary">Join</button>
+                </form>
+                <span id="newsletter-msg" class="newsletter-msg"></span>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; 2025 BrewLab Coffee Roasters LLC. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Settings</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <div class="toast-content">
+            <span id="toast-title">Added to your order!</span>
+            <p id="toast-desc">Item successfully added to your Lab cart.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

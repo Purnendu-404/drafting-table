@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArmorShield Pro — Ultimate Military-Grade Mobile Protection</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <p><i class="fa-solid fa-bolt"></i> <strong>FLASH SALE:</strong> Get 35% OFF + Free Worldwide Shipping on orders over $40! <span class="countdown" id="countdown-timer">05h 42m 19s</span></p>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="header" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>ArmorShield<span class="accent">Pro</span></span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#customizer" class="nav-link">Customizer</a>
+                <a href="#models" class="nav-link">Models</a>
+                <a href="#durability" class="nav-link">Durability Test</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="icon-btn search-trigger" aria-label="Search"><i class="fa-solid fa-search"></i></button>
+                <button class="icon-btn cart-trigger" aria-label="Cart" id="cart-btn">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+                <a href="#customizer" class="btn btn-primary nav-cta">Design Yours</a>
+                <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>ArmorShield<span class="accent">Pro</span></span>
+            </a>
+            <button class="drawer-close" id="drawer-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-links">
+            <a href="#features" class="drawer-link">Features</a>
+            <a href="#customizer" class="drawer-link">Customizer</a>
+            <a href="#models" class="drawer-link">Models</a>
+            <a href="#durability" class="drawer-link">Durability Test</a>
+            <a href="#reviews" class="drawer-link">Reviews</a>
+        </div>
+        <div class="drawer-footer">
+            <a href="#customizer" class="btn btn-primary btn-full">Design Yours Now</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-container">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+                <div class="badge-pill">
+                    <i class="fa-solid fa-award"></i> Rated #1 Drop-Proof Case of 2025
+                </div>
+                <h1>Indestructible Defense. <span class="gradient-text">Impeccable Style.</span></h1>
+                <p>Engineered with aerospace-grade titanium alloy and shock-absorbing air cushion technology. Drop-tested from 18 feet so your phone stays pristine.</p>
+                
+                <div class="hero-features-list">
+                    <span><i class="fa-solid fa-check"></i> 18ft Drop Protection</span>
+                    <span><i class="fa-solid fa-check"></i> MagSafe Compatible</span>
+                    <span><i class="fa-solid fa-check"></i> Anti-Yellowing German TPU</span>
+                </div>
+
+                <div class="hero-cta-group">
+                    <a href="#customizer" class="btn btn-primary btn-lg">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Customize Your Case
+                    </a>
+                    <a href="#models" class="btn btn-outline btn-lg">
+                        Browse Models <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="hero-social-proof">
+                    <div class="avatar-group">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="User">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="User">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="User">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="User">
+                    </div>
+                    <div class="rating-info">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p>Loved by <strong>142,000+</strong> Tech Enthusiasts Worldwide</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000">
+                <div class="phone-showcase-wrapper">
+                    <div class="floating-badge badge-1">
+                        <i class="fa-solid fa-shield-cat"></i>
+                        <div>
+                            <h4>Military Grade</h4>
+                            <p>MIL-STD 810G-516.6</p>
+                        </div>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <i class="fa-solid fa-magnet"></i>
+                        <div>
+                            <h4>MagSafe Ready</h4>
+                            <p>18N Strong Magnetic Pull</p>
+                        </div>
+                    </div>
+                    
+                    <div class="phone-mockup-container" id="hero-phone">
+                        <div class="phone-case-frame" id="case-frame-hero">
+                            <div class="phone-screen">
+                                <div class="phone-wallpaper" id="phone-wallpaper">
+                                    <div class="phone-time" id="live-clock">09:41</div>
+                                    <div class="phone-widget">
+                                        <i class="fa-solid fa-music"></i>
+                                        <div>
+                                            <strong>ArmorShield Beats</strong>
+                                            <span>High Fidelity Audio</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <p>AS FEATURED IN TOP TECH PUBLICATIONS</p>
+            <div class="brand-logos">
+                <span class="brand-item">TECH<span class="light">RADAR</span></span>
+                <span class="brand-item">WIRED</span>
+                <span class="brand-item">C|NET</span>
+                <span class="brand-item">THE VERGE</span>
+                <span class="brand-item">FORBES</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive 3D / Live Customizer Section -->
+    <section class="customizer-section" id="customizer">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="badge-pill">Interactive Studio</span>
+                <h2>Design Your Dream Cover</h2>
+                <p>Mix and match materials, finishes, and colors to build a case that matches your vibe.</p>
+            </div>
+
+            <div class="customizer-grid">
+                <!-- Left: Controls & Options -->
+                <div class="customizer-controls" data-aos="fade-right">
+                    <!-- Step 1: Phone Model -->
+                    <div class="control-group">
+                        <label class="control-label">1. Select Your Device</label>
+                        <select id="device-select" class="custom-select">
+                            <option value="iphone16pro">iPhone 16 Pro Max</option>
+                            <option value="iphone16">iPhone 16</option>
+                            <option value="samsung24">Samsung Galaxy S24 Ultra</option>
+                            <option value="pixel9">Google Pixel 9 Pro</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 2: Series -->
+                    <div class="control-group">
+                        <label class="control-label">2. Choose Protection Series</label>
+                        <div class="series-options">
+                            <button class="series-btn active" data-series="armor" data-price="49.99">
+                                <span class="s-name">Armor Pro</span>
+                                <span class="s-desc">Ultimate Drop Defense</span>
+                            </button>
+                            <button class="series-btn" data-series="carbon" data-price="59.99">
+                                <span class="s-name">Aero Carbon</span>
+                                <span class="s-desc">Real Aerospace Fiber</span>
+                            </button>
+                            <button class="series-btn" data-series="leather" data-price="54.99">
+                                <span class="s-name">Eco Leather</span>
+                                <span class="s-desc">Vegan Pebble Grain</span>
+                            </button>
+                            <button class="series-btn" data-series="clear" data-price="39.99">
+                                <span class="s-name">Crystal Clear</span>
+                                <span class="s-desc">Anti-Yellow Guarantee</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Color Finish -->
+                    <div class="control-group">
+                        <label class="control-label">3. Select Color / Finish</label>
+                        <div class="color-options" id="color-picker">
+                            <button class="color-btn active" data-color="midnight" data-bg="#1a1a1a" data-name="Midnight Black" title="Midnight Black" style="background: #1a1a1a;"></button>
+                            <button class="color-btn" data-color="titanium" data-bg="#8f8e89" data-name="Natural Titanium" title="Natural Titanium" style="background: #8f8e89;"></button>
+                            <button class="color-btn" data-color="cobalt" data-bg="#1e3a8a" data-name="Cobalt Blue" title="Cobalt Blue" style="background: #1e3a8a;"></button>
+                            <button class="color-btn" data-color="emerald" data-bg="#065f46" data-name="Emerald Green" title="Emerald Green" style="background: #065f46;"></button>
+                            <button class="color-btn" data-color="crimson" data-bg="#991b1b" data-name="Crimson Red" title="Crimson Red" style="background: #991b1b;"></button>
+                            <button class="color-btn" data-color="sunset" data-bg="linear-gradient(135deg, #f97316, #ec4899)" data-name="Sunset Gradient" title="Sunset Gradient" style="background: linear-gradient(135deg, #f97316, #ec4899);"></button>
+                        </div>
+                        <div class="selected-color-name" id="selected-color-label">Selected: <strong>Midnight Black</strong></div>
+                    </div>
+
+                    <!-- Step 4: Add-ons -->
+                    <div class="control-group">
+                        <label class="control-label">4. Customization & Add-ons</label>
+                        <div class="addon-checkboxes">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="add-magsafe" checked data-price="0">
+                                <span>Built-in MagSafe Ring (Included Free)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="add-glass" data-price="14.99">
+                                <span>9H Tempered Glass Screen Protector (+ $14.99)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="add-strap" data-price="9.99">
+                                <span>Paracord Wrist Lanyard (+ $9.99)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Live Preview Box -->
+                <div class="customizer-preview-container" data-aos="fade-left">
+                    <div class="preview-card">
+                        <div class="preview-badge">Live Interactive Preview</div>
+                        
+                        <div class="phone-preview-stage" id="preview-stage">
+                            <div class="preview-case-body" id="preview-case">
+                                <div class="camera-module">
+                                    <div class="lens"></div>
+                                    <div class="lens"></div>
+                                    <div class="lens"></div>
+                                    <div class="flash"></div>
+                                </div>
+                                <div class="magsafe-ring" id="magsafe-indicator">
+                                    <div class="ring-circle"></div>
+                                    <div class="ring-magnet"></div>
+                                </div>
+                                <div class="brand-logo-stamp">ArmorShield</div>
+                            </div>
+                        </div>
+
+                        <div class="preview-summary">
+                            <div class="price-box">
+                                <span class="label">Total Price:</span>
+                                <span class="price" id="live-price">$49.99</span>
+                            </div>
+                            <button class="btn btn-primary btn-lg btn-full" id="add-to-cart-custom">
+                                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="badge-pill">Unrivaled Engineering</span>
+                <h2>Why ArmorShield Outperforms The Rest</h2>
+                <p>Every millimeter is meticulously crafted to give your device supreme protection without bulk.</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-shield-virus"></i>
+                    </div>
+                    <h3>18-Foot Drop Protection</h3>
+                    <p>Internal air-pocket matrix absorbs shock wave energy instantly upon impact, keeping your phone screen & glass back 100% safe.</p>
+                    <ul class="feature-checklist">
+                        <li><i class="fa-solid fa-check"></i> MIL-STD-810G Certified</li>
+                        <li><i class="fa-solid fa-check"></i> Corner Air-Guard Bumpers</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-magnet"></i>
+                    </div>
+                    <h3>Super-Charged MagSafe</h3>
+                    <p>Equipped with 38 N52SH neodymium magnets. Locks instantly onto wireless chargers, wallet stands, and car mounts securely.</p>
+                    <ul class="feature-checklist">
+                        <li><i class="fa-solid fa-check"></i> 2.5x Magnetic Hold Strength</li>
+                        <li><i class="fa-solid fa-check"></i> Zero Wireless Charging Loss</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-feather"></i>
+                    </div>
+                    <h3>Featherlight Slim Profile</h3>
+                    <p>Get maximum armor protection in a shockingly thin 1.2mm frame. Slides smoothly in and out of your pocket with zero friction.</p>
+                    <ul class="feature-checklist">
+                        <li><i class="fa-solid fa-check"></i> Only 32g Total Weight</li>
+                        <li><i class="fa-solid fa-check"></i> Ergonomic Matte Grip Feel</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-droplet-slash"></i>
+                    </div>
+                    <h3>Never Yellows Guarantee</h3>
+                    <p>Infused with German Bayer TPU molecular anti-oxidation coating. Resists UV rays, sweat, and oils to stay crystal clear forever.</p>
+                    <ul class="feature-checklist">
+                        <li><i class="fa-solid fa-check"></i> Lifetime Anti-Yellow Warranty</li>
+                        <li><i class="fa-solid fa-check"></i> Fingerprint Repellent Coating</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Durability & Lab Test Section -->
+    <section class="durability-section" id="durability">
+        <div class="container durability-container">
+            <div class="durability-content" data-aos="fade-right">
+                <span class="badge-pill">Extreme Testing</span>
+                <h2>Tested Beyond Military Standards</h2>
+                <p>We put our cases through grueling torture tests—from 20ft drop rigs, hydraulic crush tests, to industrial steel ball impacts. Your device is in impenetrable hands.</p>
+                
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <h3>18 ft</h3>
+                        <p>Drop Test Height</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>5,000+</h3>
+                        <p>Drop Simulations</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>100%</h3>
+                        <p>Damage-Free Rate</p>
+                    </div>
+                </div>
+
+                <a href="#customizer" class="btn btn-primary">Secure Your Phone Today</a>
+            </div>
+
+            <div class="durability-visual" data-aos="fade-left">
+                <div class="video-mockup-card">
+                    <div class="play-overlay">
+                        <div class="pulse-ring"></div>
+                        <button class="play-btn" id="play-video-btn"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="video-caption">
+                        <h4>Watch The 20ft Drop Test Challenge</h4>
+                        <p>ArmorShield Pro vs. Concrete Pavement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Models Showcase -->
+    <section class="models-section" id="models">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="badge-pill">Best Sellers</span>
+                <h2>Ready-To-Ship Masterpieces</h2>
+                <p>Hand-crafted editions ready for immediate dispatch with same-day shipping.</p>
+            </div>
+
+            <div class="models-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-badge sale">Best Seller</div>
+                    <div class="product-img-box case-preset-1">
+                        <div class="mini-case"></div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating"><i class="fa-solid fa-star"></i> 4.9 (3,280 reviews)</div>
+                        <h3>Armor Pro - Midnight Black</h3>
+                        <p class="phone-compat">For iPhone 16 Pro Max</p>
+                        <div class="product-footer">
+                            <div class="price-tag">$49.99 <span class="old-price">$69.99</span></div>
+                            <button class="btn btn-sm btn-primary add-to-cart-quick" data-name="Armor Pro - Midnight Black" data-price="49.99">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-badge hot">Trending</div>
+                    <div class="product-img-box case-preset-2">
+                        <div class="mini-case"></div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating"><i class="fa-solid fa-star"></i> 4.9 (1,840 reviews)</div>
+                        <h3>Aero Carbon - Titanium Gray</h3>
+                        <p class="phone-compat">For Samsung S24 Ultra</p>
+                        <div class="product-footer">
+                            <div class="price-tag">$59.99 <span class="old-price">$79.99</span></div>
+                            <button class="btn btn-sm btn-primary add-to-cart-quick" data-name="Aero Carbon - Titanium Gray" data-price="59.99">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-badge new">New Release</div>
+                    <div class="product-img-box case-preset-3">
+                        <div class="mini-case"></div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating"><i class="fa-solid fa-star"></i> 5.0 (920 reviews)</div>
+                        <h3>Eco Leather - Saddle Brown</h3>
+                        <p class="phone-compat">For iPhone 16 Pro</p>
+                        <div class="product-footer">
+                            <div class="price-tag">$54.99 <span class="old-price">$74.99</span></div>
+                            <button class="btn btn-sm btn-primary add-to-cart-quick" data-name="Eco Leather - Saddle Brown" data-price="54.99">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-badge sale">Popular</div>
+                    <div class="product-img-box case-preset-4">
+                        <div class="mini-case"></div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating"><i class="fa-solid fa-star"></i> 4.8 (2,150 reviews)</div>
+                        <h3>Crystal Clear - Ultra HD</h3>
+                        <p class="phone-compat">For Google Pixel 9 Pro</p>
+                        <div class="product-footer">
+                            <div class="price-tag">$39.99 <span class="old-price">$54.99</span></div>
+                            <button class="btn btn-sm btn-primary add-to-cart-quick" data-name="Crystal Clear - Ultra HD" data-price="39.99">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Customer Reviews Section -->
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="badge-pill">Verified Reviews</span>
+                <h2>What Our Customers Are Saying</h2>
+                <p>Over 140,000 happy users rely on ArmorShield Pro every day.</p>
+            </div>
+
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&auto=format&fit=crop&q=80" alt="Marcus T.">
+                        </div>
+                        <div>
+                            <h4>Marcus Vance</h4>
+                            <span class="verified-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"I dropped my iPhone 16 Pro off the second-story balcony onto concrete while moving boxes. My heart stopped. Picked it up—not a single scratch on the screen or body. This case literally paid for itself 20x over!"</p>
+                    <span class="review-date">2 days ago</span>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Sarah L.">
+                        </div>
+                        <div>
+                            <h4>Sarah Jenkins</h4>
+                            <span class="verified-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The MagSafe magnets on this case are ridiculously strong! My car mount used to shake off with my old Apple case, but this one locks in like pure gravity. Plus the frosted emerald finish looks stunning."</p>
+                    <span class="review-date">1 week ago</span>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">
+                            <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=100&auto=format&fit=crop&q=80" alt="David K.">
+                        </div>
+                        <div>
+                            <h4>David Kincaid</h4>
+                            <span class="verified-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Sleek, premium, and zero bulk. Most rugged cases make your phone feel like a heavy brick. ArmorShield somehow kept it super slim while giving extreme corner cushion protection. 10/10!"</p>
+                    <span class="review-date">2 weeks ago</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container container-sm">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="badge-pill">Got Questions?</span>
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about our products and shipping.</p>
+            </div>
+
+            <div class="faq-accordion" data-aos="fade-up">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Will this case interfere with wireless charging or MagSafe accessories?</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Not at all! ArmorShield Pro features embedded high-flux N52SH neodymium magnets that align perfectly with MagSafe chargers, wallets, and battery packs for faster and stronger magnetic attachment.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is your warranty and return policy?</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer a 30-day money-back guarantee with zero hassle returns. Plus, all cases come with our Lifetime Replacement Warranty against manufacturing defects and yellowing.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How long does international shipping take?</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We ship same-day from our fulfillment hubs in the US, EU, and Asia. Standard shipping takes 3-5 business days, while Express Priority delivery takes 1-2 business days.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Does the case work with glass screen protectors?</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Our cases are engineered with precision edge clearances to seamlessly accommodate 9H tempered glass screen protectors without lifting or bubbling the edges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA Banner -->
+    <section class="cta-banner">
+        <div class="container" data-aos="zoom-in">
+            <div class="cta-banner-box">
+                <div class="glow-effect"></div>
+                <h2>Protect Your Investment Today</h2>
+                <p>Join over 142,000 satisfied customers. Get 35% off your order today + Free Express Shipping.</p>
+                <div class="cta-actions">
+                    <a href="#customizer" class="btn btn-light btn-lg">Design Your Case Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo footer-logo">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>ArmorShield<span class="accent">Pro</span></span>
+                    </a>
+                    <p>The ultimate fusion of aerospace-grade military drop protection and minimalist aesthetics.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#customizer">Custom Studio</a></li>
+                        <li><a href="#models">Models & Pricing</a></li>
+                        <li><a href="#durability">Drop Test Lab</a></li>
+                        <li><a href="#reviews">Customer Reviews</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Device Series</h4>
+                    <ul>
+                        <li><a href="#customizer">iPhone 16 Pro Max</a></li>
+                        <li><a href="#customizer">Samsung Galaxy S24 Ultra</a></li>
+                        <li><a href="#customizer">Google Pixel 9 Pro</a></li>
+                        <li><a href="#customizer">iPhone 15 Series</a></li>
+                        <li><a href="#customizer">MagSafe Accessories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Stay Connected</h4>
+                    <p>Subscribe for secret drop alerts and 15% off your next order.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 ArmorShield Pro Inc. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Warranty Claim</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-out Cart Drawer -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Shopping Bag (<span id="drawer-cart-count">0</span>)</h3>
+            <button class="cart-close" id="cart-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-body" id="cart-items-container">
+            <!-- Empty Cart State -->
+            <div class="empty-cart" id="empty-cart-state">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <p>Your bag is currently empty.</p>
+                <a href="#customizer" class="btn btn-primary btn-sm" id="empty-cart-cta">Start Customizing</a>
+            </div>
+        </div>
+        <div class="cart-footer" id="cart-footer" style="display: none;">
+            <div class="cart-subtotal">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal-price">$0.00</span>
+            </div>
+            <p class="shipping-note"><i class="fa-solid fa-truck-fast"></i> You qualify for <strong>Free Express Shipping!</strong></p>
+            <button class="btn btn-primary btn-full btn-lg" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="video-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="video-container">
+                <iframe id="youtube-iframe" src="" title="Drop Test Video" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

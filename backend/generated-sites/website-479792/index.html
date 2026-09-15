@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adidas | Impossible Is Nothing — Official Store</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <p>⚡ FREE STANDARD SHIPPING & RETURNS ON ALL MEMBERS ORDERS. <a href="#shop">JOIN NOW</a></p>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#">
+                    <!-- Classic Trefoil/Three Stripes stylized SVG -->
+                    <svg viewBox="0 0 100 60" class="adidas-logo" fill="currentColor">
+                        <path d="M0 60L35 0H50L15 60H0Z" />
+                        <path d="M25 60L60 0H75L40 60H25Z" />
+                        <path d="M50 60L85 0H100L65 60H50Z" />
+                    </svg>
+                    <span>adidas</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#new" class="active">New & Trending</a></li>
+                    <li><a href="#men">Men</a></li>
+                    <li><a href="#women">Women</a></li>
+                    <li><a href="#kids">Kids</a></li>
+                    <li><a href="#customize">3D Customizer</a></li>
+                    <li><a href="#story">Sustainability</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search products..." id="search-input">
+                </div>
+                <button class="icon-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge">3</span></button>
+                <button class="icon-btn" id="cart-btn" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge" id="cart-count">0</span></button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+            <h3>Menu</h3>
+            <button id="close-drawer"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="#new">New & Trending</a></li>
+            <li><a href="#men">Men</a></li>
+            <li><a href="#women">Women</a></li>
+            <li><a href="#kids">Kids</a></li>
+            <li><a href="#customize">3D Customizer</a></li>
+            <li><a href="#story">Sustainability</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-slider">
+            <div class="hero-slide active" style="background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.1) 100%), url('https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=1920&q=80')"></div>
+            <div class="hero-slide" style="background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.1) 100%), url('https://images.unsplash.com/photo-1518002171953-a080ee817e1f?auto=format&fit=crop&w=1920&q=80')"></div>
+            <div class="hero-slide" style="background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.1) 100%), url('https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=1920&q=80')"></div>
+        </div>
+        <div class="hero-content">
+            <div class="tag">IMPOSSIBLE IS NOTHING</div>
+            <h1>ULTRABOOST <br><span>LIGHT 2025</span></h1>
+            <p>Our lightest Ultraboost ever. Packed with hundreds of bouncing Boost capsules for infinite energy return with every stride.</p>
+            <div class="hero-btns">
+                <a href="#shop" class="btn btn-primary">SHOP NOW <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#customize" class="btn btn-outline">CUSTOMIZE YOURS</a>
+            </div>
+            <div class="hero-slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Ticker Bar -->
+    <div class="brand-ticker">
+        <div class="ticker-track">
+            <span>ORIGINALS</span> <span class="dot-sep">•</span>
+            <span>PERFORMANCE</span> <span class="dot-sep">•</span>
+            <span>Y-3</span> <span class="dot-sep">•</span>
+            <span>STELLA MCCARTNEY</span> <span class="dot-sep">•</span>
+            <span>STAN SMITH</span> <span class="dot-sep">•</span>
+            <span>SUPERSTAR</span> <span class="dot-sep">•</span>
+            <span>NMD</span> <span class="dot-sep">•</span>
+            <span>FORUM</span> <span class="dot-sep">•</span>
+            <span>ORIGINALS</span> <span class="dot-sep">•</span>
+            <span>PERFORMANCE</span> <span class="dot-sep">•</span>
+            <span>Y-3</span> <span class="dot-sep">•</span>
+            <span>STELLA MCCARTNEY</span>
+        </div>
+    </div>
+
+    <!-- Category Showcase Grid -->
+    <section class="categories section-pad">
+        <div class="container">
+            <div class="section-header">
+                <h2>POPULAR CATEGORIES</h2>
+                <a href="#shop" class="view-all">Explore All <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <div class="cat-grid">
+                <div class="cat-card" style="background-image: url('https://images.unsplash.com/photo-1514989940723-e8e5ef6ab5c9?auto=format&fit=crop&w=800&q=80');">
+                    <div class="cat-overlay">
+                        <h3>Running & Marathon</h3>
+                        <p>Engineered for elite speed</p>
+                        <a href="#shop" class="cat-link">DISCOVER <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="cat-card" style="background-image: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80');">
+                    <div class="cat-overlay">
+                        <h3>Streetwear & Originals</h3>
+                        <p>Iconic heritage, modern vibe</p>
+                        <a href="#shop" class="cat-link">DISCOVER <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="cat-card" style="background-image: url('https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&w=800&q=80');">
+                    <div class="cat-overlay">
+                        <h3>Training & Gym</h3>
+                        <p>Stability meets ultimate grip</p>
+                        <a href="#shop" class="cat-link">DISCOVER <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase Section -->
+    <section class="products section-pad" id="shop">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2>FEATURED DROPS</h2>
+                    <p class="subtitle">Handpicked icons and cutting-edge innovations.</p>
+                </div>
+                <div class="filter-tabs">
+                    <button class="tab-btn active" data-filter="all">All</button>
+                    <button class="tab-btn" data-filter="running">Running</button>
+                    <button class="tab-btn" data-filter="originals">Originals</button>
+                    <button class="tab-btn" data-filter="football">Football</button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="product-grid">
+                <!-- JS will populate products -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive 3D / Colorway Customizer Section -->
+    <section class="customizer-section section-pad" id="customize">
+        <div class="container">
+            <div class="customizer-wrapper">
+                <div class="customizer-info">
+                    <span class="tag">CREATOR STUDIO</span>
+                    <h2>CUSTOMIZE YOUR <br><span>STAN SMITH 3D</span></h2>
+                    <p>Make them uniquely yours. Pick your upper color, heel accent, and sole tone in real-time before checkout.</p>
+                    
+                    <div class="color-picker-group">
+                        <label>Upper Color</label>
+                        <div class="color-options" data-target="upper">
+                            <button class="color-btn active" style="background-color: #ffffff;" data-color="#ffffff" data-name="Cloud White" title="Cloud White"></button>
+                            <button class="color-btn" style="background-color: #111111;" data-color="#111111" data-name="Core Black" title="Core Black"></button>
+                            <button class="color-btn" style="background-color: #1a365d;" data-color="#1a365d" data-name="Night Navy" title="Night Navy"></button>
+                            <button class="color-btn" style="background-color: #9b2c2c;" data-color="#9b2c2c" data-name="Scarlet Red" title="Scarlet Red"></button>
+                            <button class="color-btn" style="background-color: #276749;" data-color="#276749" data-name="Forest Green" title="Forest Green"></button>
+                        </div>
+                    </div>
+
+                    <div class="color-picker-group">
+                        <label>Heel Tab & Accent</label>
+                        <div class="color-options" data-target="heel">
+                            <button class="color-btn active" style="background-color: #111111;" data-color="#111111" data-name="Core Black" title="Core Black"></button>
+                            <button class="color-btn" style="background-color: #1a365d;" data-color="#1a365d" data-name="Royal Blue" title="Royal Blue"></button>
+                            <button class="color-btn" style="background-color: #9b2c2c;" data-color="#9b2c2c" data-name="Bold Red" title="Bold Red"></button>
+                            <button class="color-btn" style="background-color: #d69e2e;" data-color="#d69e2e" data-name="Solar Gold" title="Solar Gold"></button>
+                            <button class="color-btn" style="background-color: #319795;" data-color="#319795" data-name="Mint Green" title="Mint Green"></button>
+                        </div>
+                    </div>
+
+                    <div class="customizer-summary">
+                        <div class="spec">
+                            <span>Selected Style:</span>
+                            <strong id="selected-spec-name">Stan Smith Custom Edition</strong>
+                        </div>
+                        <div class="price">
+                            <span>Price:</span>
+                            <strong>$130.00</strong>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" id="add-custom-to-cart"><i class="fa-solid fa-cart-plus"></i> ADD CUSTOM SNEAKER TO CART</button>
+                </div>
+
+                <div class="customizer-preview">
+                    <div class="shoe-stage">
+                        <!-- SVG / Interactive Shoe Graphic simulation -->
+                        <div class="shoe-graphic-container" id="shoe-graphic">
+                            <svg viewBox="0 0 500 300" class="sneaker-svg">
+                                <!-- Sole -->
+                                <path id="shoe-sole" d="M60 220 C100 230, 350 230, 440 210 C470 200, 480 180, 450 175 C350 170, 150 170, 70 185 Z" fill="#f0f0f0" stroke="#ddd" stroke-width="2"/>
+                                <!-- Midsole stitching -->
+                                <path d="M75 195 Q 250 195 440 190" stroke="#ccc" stroke-dasharray="4,4" fill="none"/>
+                                <!-- Upper Body -->
+                                <path id="shoe-upper" d="M70 185 C80 140, 140 100, 220 100 C270 100, 320 120, 380 135 C430 148, 460 160, 450 175 C350 170, 150 170, 70 185 Z" fill="#ffffff" stroke="#222" stroke-width="3" />
+                                <!-- Eye stay & Laces -->
+                                <path d="M190 120 L300 145 L320 135 L210 110 Z" fill="#dddddd" />
+                                <path d="M195 125 L305 150 M210 118 L320 142 M225 110 L335 135" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+                                <!-- 3 Stripes Brand Logo -->
+                                <g transform="translate(240, 125) rotate(-15)">
+                                    <rect x="0" y="0" width="8" height="45" rx="3" fill="#111" />
+                                    <rect x="15" y="-3" width="8" height="45" rx="3" fill="#111" />
+                                    <rect x="30" y="-6" width="8" height="45" rx="3" fill="#111" />
+                                </g>
+                                <!-- Heel Tab -->
+                                <path id="shoe-heel" d="M380 135 C390 120, 400 115, 415 120 C420 125, 415 145, 405 155 Z" fill="#111111" />
+                            </svg>
+                        </div>
+                        <div class="shadow-ellipse"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability & Tech Section -->
+    <section class="story-section section-pad" id="story">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&w=1000&q=80" alt="Sustainability">
+                    <div class="story-badge">
+                        <i class="fa-solid fa-leaf"></i>
+                        <span>END PLASTIC WASTE</span>
+                    </div>
+                </div>
+                <div class="story-content">
+                    <span class="tag">SUSTAINABILITY COMMITMENT</span>
+                    <h2>MADE WITH <br><span>RECYCLED MATERIALS</span></h2>
+                    <p>We are committed to helping end plastic waste. By 2025, our goal is to use 100% recycled polyester in all our products wherever possible. Every step with adidas is a step toward a cleaner planet.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Primegreen high-performance recycled materials</li>
+                        <li><i class="fa-solid fa-check"></i> Ocean plastic collected from beaches and coastal communities</li>
+                        <li><i class="fa-solid fa-check"></i> Carbon-conscious manufacturing processes</li>
+                    </ul>
+                    <a href="#shop" class="btn btn-outline dark-btn">EXPLORE SUSTAINABLE GEAR</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Promo Banner -->
+    <section class="app-promo">
+        <div class="container">
+            <div class="app-banner-inner">
+                <div class="app-text">
+                    <span class="tag">THE ADIDAS APP</span>
+                    <h2>UNLOCK THE BEST OF ADIDAS</h2>
+                    <p>Get instant access to limited sneaker drops, insider events, and personalized workout plans right on your phone.</p>
+                    <div class="app-badges">
+                        <a href="#" class="store-badge"><i class="fa-brands fa-apple"></i> App Store</a>
+                        <a href="#" class="store-badge"><i class="fa-brands fa-google-play"></i> Google Play</a>
+                    </div>
+                </div>
+                <div class="app-image">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80" alt="App Preview">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter & Membership -->
+    <section class="newsletter section-pad">
+        <div class="container text-center">
+            <h2>JOIN ADICLUB & GET 15% OFF</h2>
+            <p>Sign up for updates on latest drops, exclusive member sales, and sports stories.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required id="newsletter-email">
+                <button type="submit" class="btn btn-primary">SIGN UP FOR FREE</button>
+            </form>
+            <div id="newsletter-msg" class="success-msg"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>PRODUCTS</h4>
+                    <ul>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Clothing</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>SPORTS</h4>
+                    <ul>
+                        <li><a href="#">Running</a></li>
+                        <li><a href="#">Football</a></li>
+                        <li><a href="#">Basketball</a></li>
+                        <li><a href="#">Training & Gym</a></li>
+                        <li><a href="#">Outdoor</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>COLLECTIONS</h4>
+                    <ul>
+                        <li><a href="#">Ultraboost</a></li>
+                        <li><a href="#">Superstar</a></li>
+                        <li><a href="#">Stan Smith</a></li>
+                        <li><a href="#">NMD</a></li>
+                        <li><a href="#">Forum</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>SUPPORT</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Order Tracker</a></li>
+                        <li><a href="#">Store Locator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>COMPANY INFO</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Student Discount</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms and Conditions</a>
+                    <a href="#">Cookie Settings</a>
+                </div>
+                <p class="copyright">© 2025 adidas America, Inc. All Rights Reserved</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-out Cart Drawer -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>YOUR BAG (<span id="cart-drawer-count">0</span>)</h3>
+            <button id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-body" id="cart-items">
+            <!-- Cart items populated by JS -->
+            <div class="empty-cart" id="empty-cart">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <p>Your bag is currently empty.</p>
+                <a href="#shop" class="btn btn-primary" id="start-shopping-btn">START SHOPPING</a>
+            </div>
+        </div>
+        <div class="cart-footer" id="cart-footer" style="display: none;">
+            <div class="subtotal-row">
+                <span>Estimated Total:</span>
+                <strong id="cart-total-price">$0.00</strong>
+            </div>
+            <p class="shipping-note">Taxes and shipping calculated at checkout.</p>
+            <button class="btn btn-primary checkout-btn" id="checkout-btn">CHECKOUT SECURELY</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Quick View / Product Detail Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-grid" id="modal-details">
+                <!-- Populated via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
