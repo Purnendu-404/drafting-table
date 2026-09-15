@@ -1,5 +1,7 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
+
 require("dotenv").config();
 
 const { build } = require("./ai");
@@ -16,6 +18,18 @@ app.get("/health", (req, res) => {
         message: "Server is healthy",
     });
 });
+
+/*
+ * Serve all generated websites locally.
+ *
+ * Example:
+ * generated-sites/tic-tac-toe/index.html
+ *
+ * becomes:
+ *
+ * http://localhost:3000/sites/tic-tac-toe/
+ */
+app.use("/sites", express.static(path.resolve("generated-sites")));
 
 app.post("/api/build", async (req, res) => {
     try {
@@ -34,27 +48,57 @@ app.post("/api/build", async (req, res) => {
 
         console.log("BUILD RESULT:", result);
 
+        /*
+         * Convert the generated project path into
+         * a local browser URL.
+         *
+         * Example:
+         *
+         * projectPath = "tic-tac-toe"
+         *
+         * URL:
+         * http://localhost:3000/sites/tic-tac-toe/
+         */
+
+        const projectPath = result.projectPath;
+
+        const encodedProjectPath =
+            projectPath
+                .split(path.sep)
+                .map(encodeURIComponent)
+                .join("/");
+
+        const url =
+            projectPath === "."
+                ? "http://localhost:3000/sites/"
+                : `http://localhost:3000/sites/${encodedProjectPath}/`;
+
         return res.status(200).json({
             success: true,
-            message: result.message || "Website built successfully.",
+            message:
+                result.message ||
+                "Website built successfully.",
+            url,
         });
-
     } catch (error) {
-        console.error("========== BUILD ERROR ==========");
+        console.error(
+            "========== BUILD ERROR =========="
+        );
+
         console.error(error);
-        console.error("=================================");
+
+        console.error(
+            "================================="
+        );
 
         return res.status(500).json({
             success: false,
-            error: error.message || "Build failed",
+            error:
+                error.message ||
+                "Build failed",
         });
     }
 });
-
-app.use(
-    "/sites",
-    express.static("generated-sites")
-);
 
 app.listen(3000, () => {
     console.log(

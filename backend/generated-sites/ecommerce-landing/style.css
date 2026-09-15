@@ -1,0 +1,8 @@
+body { margin: 0; font-family: sans-serif; background: #f9f9f9; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.logo { font-weight: bold; font-size: 1.5rem; color: #333; }
+nav a { margin: 0 1rem; text-decoration: none; color: #666; }
+.hero { text-align: center; padding: 4rem 1rem; background: #eee; }
+.cta { padding: 1rem 2rem; background: #333; color: white; border: none; cursor: pointer; margin-top: 1rem; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; padding: 2rem 5%; }
+.product-card { background: white; padding: 1rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
